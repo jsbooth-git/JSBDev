@@ -79,6 +79,215 @@ This is the page header with background, logo and slogan */
 This is the container holding the popup view cards for the brief on each section
 that can be visited on the website */
 
+#secondContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+/* ----------------------------- (popup card) ------------------------------- */
+
+#card1 {
+  background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Original/WebDev_ProductCard_AlesNesetril.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.card-dimensions .default-card {
+  z-index: 1;
+  position: relative;
+  width: 275px;
+  height: 225px;
+  margin: 40px;
+  border-radius: 10px;
+}
+
+.card-dimensions .default-card:before {
+  content: 'SECTION HEADING';
+  background: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  font-weight: 600;
+  width: 100%;
+  height: 20%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2.5px;
+}
+
+.card-dimensions .default-card .popup-btn {
+  z-index: 2;
+  color: black;
+  background: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10pt;
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  width: 35%;
+}
+
+/* ----------------------------- (popup view) ------------------------------- */
+
+.card-dimensions .popup-view {
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.35s;
+}
+
+.card-dimensions .popup-view.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-dimensions .popup-card {
+  position: relative;
+  display: flex;
+  width: 800px;
+  height: 500px;
+  margin: 20px;
+}
+
+.card-dimensions .popup-card .card-bg {
+  z-index: 2;
+  background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Original/WebDev_ProductCard_AlesNesetril.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 90%;
+  transform: translateY(25px);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.card-dimensions .popup-card .info {
+  z-index: 2;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.card-dimensions .popup-card .fa-xmark {
+  color: rgb(10, 10, 10);
+  z-index: 3;
+  position: absolute;
+  right: 0;
+  font-size: 15pt;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.card-dimensions .popup-card .info h2 {
+  font-size: 18pt;
+  line-height: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  transform: translateY(-5px);
+}
+
+.card-dimensions .popup-card .info p {
+  font-size: 12pt;
+  margin: 10px;
+  text-align: center;
+}
+
+.card-dimensions .popup-card .info .read-more-btn {
+  color: #fff;
+  background-color: rgb(70, 224, 178);
+  font-size: 13pt;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  margin: auto;
+  padding: 10px 50px;
+  border-radius: 20px;
+  letter-spacing: 3px;
+}
+
+/* --------------------------- (card reponsiveness) -------------------------- */
+
+@media (max-width: 900px) {
+  .card-dimensions .popup-card {
+    flex-direction: column;
+    width: 550px;
+    height: auto;
+  }
+
+  .card-dimensions .popup-card .card-bg {
+    z-index: 3;
+    width: 100%;
+    height: 200px;
+    transform: translateY(0);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+  }
+
+  .card-dimensions .popup-card .info {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .card-dimensions .popup-card .info h2 {
+    margin: 10px 5px 5px 5px;
+    font-size: 25px;
+  }
+
+  .card-dimensions .popup-card .info p {
+    margin: 5px;
+    font-size: 13px;
+  }
+
+  .card-dimensions .popup-card .info .read-more-btn {
+    margin: 5px auto;
+    padding: 5px 40px;
+    font-size: 14px;
+  }
+
+  .card-dimensions .popup-card .fa-xmark {
+    z-index: 4;
+  }
+}
+
 /* ------------------------------ F O N T S ------------------------------ */
 
 /* latin-ext */
