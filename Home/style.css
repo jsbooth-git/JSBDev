@@ -1,10 +1,25 @@
+/* -------------------------------- MAIN -------------------------------------- */
+
 :root {
   box-sizing: border-box;
 }
 
-body {
+* {
   margin: 0;
+  padding: 0;
 }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(10, 10, 10);
+}
+
+/* ------------------------------ 1st CONTAINER ---------------------------------
+
+This is the page header with background, logo and slogan */
 
 #firstContainer {
   width: 100vw;
@@ -19,7 +34,8 @@ body {
   justify-content: center;
   align-items: center;
   width: 98vw;
-  height: 50vh;
+  height: 45vw;
+  max-height: 50vh;
   margin-top: 1.5vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,8 +45,6 @@ body {
 }
 
 #logoBG {
-  background-color: rgb(17, 82, 173, 0.45);
-  box-shadow: 0px 0px 40px rgb(17, 82, 173);
   border-radius: 15px;
   width: 50vw;
   height: 35vh;
@@ -42,21 +56,28 @@ body {
 
 #logoBG > img {
   display: block;
-  width: 50vw;
-  max-width: 50vh;
+  margin-bottom: 50px;
+  width: 110%;
+  max-width: 80vh;
   padding-top: 2vh;
 }
 
-#slogan {
+.slogan {
   margin: 0;
   text-align: center;
-  padding-bottom: 2vh;
   color: white;
   font-family: 'Staatliches', 'Bebas Neue', 'Teko';
-  letter-spacing: 5px;
+  letter-spacing: 1.2vw;
   font-size: 2vw;
   padding-bottom: 4vh;
+  text-shadow: 4px 4px 1px rgb(10, 10, 10);
+  transform: translateY(-75px);
 }
+
+/* ------------------------------ 2nd CONTAINER --------------------------------
+
+This is the container holding the popup view cards for the brief on each section
+that can be visited on the website */
 
 /* ------------------------------ F O N T S ------------------------------ */
 
