@@ -5,7 +5,6 @@ var popupBtns = document.querySelectorAll('.popup-btn');
 var closeBtns = document.querySelectorAll('.fa-xmark');
 
 // View button functionality
-
 var popup = function (popupClick) {
   popupViews[popupClick].classList.add('active');
 };
