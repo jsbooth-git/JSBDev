@@ -48,13 +48,14 @@ This is the page header with background, logo and slogan */
 
 #logoAndSlogan {
   border-radius: 15px;
-  width: 50vw;
-  height: 35vh;
+  width: 50%;
+  height: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:end;
   align-items: center;
-  transform: translateY(+18px);
+  text-align: center;
+  padding-top: 120px;
 }
 
 #logoAndSlogan > img {
@@ -62,18 +63,19 @@ This is the page header with background, logo and slogan */
   margin-bottom: 50px;
   width: 110%;
   max-width: 80vh;
-  padding-top: 2vh;
+  padding-top: 1vw;
 }
 
 .slogan {
   margin: 0;
   text-align: center;
   color: white;
-  font-family: 'Staatliches', 'Bebas Neue', 'Teko';
+  width: 1200px;
+  font-family: 'IBM Plex Sans', sans-serif;
   letter-spacing: 1.2vw;
-  font-size: 2vw;
+  font-size: 2.1vh;
   padding-bottom: 4vh;
-  text-shadow: 4px 4px 1px rgb(10, 10, 10);
+  text-shadow: 4px 4px 1px rgb(8, 8, 8);
   transform: translateY(-75px);
 }
 
@@ -89,9 +91,10 @@ that can be visited on the website */
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: 50vh;
+  min-height: 30vh;
+  max-height: 40vh;
   margin: 0;
-  padding-top: 0px;
+  margin-top: 1vw;
 }
 
 /* ----------------------------- (popup card) ------------------------------- */
@@ -110,28 +113,26 @@ that can be visited on the website */
 }
 
 #card2 {
-  background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Original/WebDev_ProductCard_AlesNesetril.jpg');
-
+background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Edited/Focus_ProductCard_DavidMonje.png');
 }
 
 #card3 {
-  background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Original/WebDev_ProductCard_AlesNesetril.jpg');
-
-}
+background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Edited/SoundEng_ProductCard_IvanJermakov.jpg');}
 
 .card-dimensions .default-card {
   z-index: 1;
   position: relative;
   width: 275px;
-  height: 225px;
+  height: 220px;
   margin: 40px;
   border-radius: 10px;
 }
 
 .card-dimensions .default-card:before {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.9);
   position: absolute;
   font-weight: 600;
+  font-family: 'IBM Plex Sans', sans-serif;
   width: 100%;
   height: 20%;
   border-top-left-radius: 10px;
@@ -157,18 +158,19 @@ that can be visited on the website */
 .card-dimensions .default-card .popup-btn {
   z-index: 2;
   color: black;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   position: absolute;
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 10pt;
+  font-size: 12pt;
   text-decoration: none;
-  letter-spacing: 1px;
-  padding: 5px 10px;
+  padding-left: 7px;
+  padding-top: 3px;
   border-radius: 10px;
   cursor: pointer;
-  font-weight: bold;
+  font-family: 'Hind', sans-serif;
+  letter-spacing: 4px;
   text-align: center;
   width: 35%;
 }
