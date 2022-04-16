@@ -20,23 +20,20 @@
       rel="stylesheet"
     />
     <!-- STYLES -->
+    <link rel="stylesheet" href="../CSS/all.css" />
     <link
       rel="stylesheet"
-      href="/home/jacobbooth/WebDevelopment/JSBDev/Workspace/CSS/all.css"
+      href="../CSS/fontawesome-free-6.0.0-web/css/all.css"
     />
-    <link
-      rel="stylesheet"
-      href="/home/jacobbooth/WebDevelopment/Assets/fontawesome-free-6.0.0-web/css/all.css
-    "
-    />
+    <!-- Font awesome doesn't work without both of the above linked -->
     <link rel="stylesheet" href="style.css" />
-    <!--NEED TO LINK THE AWESOMEFONTS STUFF HERE, CHECK COMPONENTS FOLDER-->
+    <link rel="stylesheet" href="../CSS/normalize.css" />
     <title>JSBDev Home</title>
   </head>
   <body>
     <!-- Page header with background, logo and slogan -->
     <section id="first-background">
-      <div id="firstContainer">
+      <section id="firstContainer">
         <figure id="pageHeader">
           <h1 id="logoAndSlogan">
             <img
@@ -46,11 +43,11 @@
             <p class="slogan">YOUR WEB | YOUR WORLD</p>
           </h1>
         </figure>
-      </div>
+      </section>
       <!-- Popup view cards for section briefs -->
-      <div id="secondContainer">
+      <section id="secondContainer">
         <!-- CARD 1 -->
-        <div class="card-dimensions" id="card1-dimensions">
+        <figure class="card-dimensions" id="card1-dimensions">
           <div class="default-card" id="card1">
             <a class="popup-btn" id="popup-btn1">VIEW</a>
           </div>
@@ -77,9 +74,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </figure>
         <!-- CARD 2 -->
-        <div class="card-dimensions" id="card2-dimensions">
+        <figure class="card-dimensions" id="card2-dimensions">
           <div class="default-card" id="card2">
             <a class="popup-btn" id="popup-btn2">VIEW</a>
           </div>
@@ -106,9 +103,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </figure>
         <!-- CARD 3 -->
-        <div class="card-dimensions" id="card3-dimensions">
+        <figure class="card-dimensions" id="card3-dimensions">
           <div class="default-card" id="card3">
             <a class="popup-btn" id="popup-btn3">VIEW</a>
           </div>
@@ -135,8 +132,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </figure>
+      </section>
     </section>
   </body>
   <script src="script.js"></script>
