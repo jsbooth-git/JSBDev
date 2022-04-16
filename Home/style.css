@@ -19,7 +19,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100vw;
-  background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Original/Focus_ProductCard_DavidMonje.jpg');
+  background-image: url('../Assets/Images/Original/Focus_ProductCard_DavidMonje.jpg');
 
 }
 
@@ -57,7 +57,7 @@ This is the page header with background, logo and slogan */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Edited/Galaxy_Background_GregoryHayes.jpg');
+  background-image: url('../Assets/Images/Edited/Galaxy_Background_GregoryHayes.jpg');
   box-shadow: 0 0 40px 40px black;
 }
 
@@ -170,15 +170,15 @@ that can be visited on the website */
 }
 
 #card1 {
-  background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Original/WebDev_ProductCard_AlesNesetril.jpg');
+  background-image: url('../Assets/Images/Original/WebDev_ProductCard_AlesNesetril.jpg');
 }
 
 #card2 {
-background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Edited/Focus_ProductCard_DavidMonje.png');
+background-image: url('../Assets/Images/Edited/Focus_ProductCard_DavidMonje.jpg');
 }
 
 #card3 {
-background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Edited/SoundEng_ProductCard_IvanJermakov.jpg');}
+background-image: url('../Assets/Images/Edited/SoundEng_ProductCard_IvanJermakov.jpg');}
 
 .card-dimensions .default-card {
   z-index: 1;
@@ -275,15 +275,15 @@ background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Edit
 }
 
 #card1-dimensions .popup-card .card-bg {
-  background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Original/WebDev_ProductCard_AlesNesetril.jpg');
+  background-image: url('../Assets/Images/Original/WebDev_ProductCard_AlesNesetril.jpg');
 }
 
 #card2-dimensions .popup-card .card-bg {
-  background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Edited/Focus_ProductCard_DavidMonje.png');
+  background-image: url('../Assets/Images/Edited/Focus_ProductCard_DavidMonje.png');
 }
 
 #card3-dimensions .popup-card .card-bg {
-  background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Edited/SoundEng_ProductCard_IvanJermakov.jpg');
+  background-image: url('../Assets/Images/Edited/SoundEng_ProductCard_IvanJermakov.jpg');
 }
 
 .card-dimensions .popup-card .info {
@@ -386,6 +386,36 @@ background-image: url('/home/jacobbooth/WebDevelopment/JSBDev/Assets/Images/Edit
   .card-dimensions .popup-card .fa-xmark {
     z-index: 4;
   }
+}
+
+/* /////////////////////////////// 3rd CONTAINER ///////////////////////////////
+
+This container holds my introduction */
+
+#thirdContainer {
+  width: 100vw;
+  min-height: 50vh;
+  max-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#introductionContent {
+  width: 85vw;
+  min-height: 35vh;
+  max-height: 40vh;
+  background: rgba(172, 252, 251, 0.2);
+  border-radius: 10px;
+  padding: 0 20px 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#introductionContent  > p {
+  text-align: center;
+  font-size: 120%;
 }
 
 /* ------------------------------ F O N T S ------------------------------ */
