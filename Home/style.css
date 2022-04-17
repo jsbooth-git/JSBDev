@@ -16,10 +16,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-position: center;
-  background-size: 100vw;
-  background-image: url('../Assets/Images/Edited/Focus_PageBackground_DavidMonje.jpg');
+  padding: 0;
+}
 
+#pageBackground {
+  background-position: center;
+  background-size: 100%;
+  background-image: url('../Assets/Images/Edited/Focus_PageBackground_DavidMonje.jpg');
 }
 
 /* first-background encompasses 1st and 2nd container*/
@@ -29,7 +32,7 @@ body {
   flex-direction: column;
   background-color: rgba(0,0,0,0.8);
   height: 100%;
-  box-shadow: 0 0 5px 5px rgba(0,0,0,0.8)
+  width: 100%;
 }
 
 /* /////////////////////////////// 1st CONTAINER ///////////////////////////////
@@ -39,10 +42,12 @@ This is the page header with background, logo and slogan */
 #firstContainer {
   width: 100vw;
   min-height: 25vh;
-  max-height: 80vh;
+  max-height: 50vh;
   display: flex;
   justify-content: center;
-  transform: TranslateY(+45px);
+  align-items: center;
+  transform: translateY(+3vw);
+  margin-bottom: 0.1%;
 }
 
 #pageHeader {
@@ -91,6 +96,39 @@ This is the page header with background, logo and slogan */
   padding-bottom: 4vh;
   text-shadow: 4px 4px 1px rgb(8, 8, 8);
   transform: translateY(-75px);
+  animation: fadeIn linear 4s;
+  -webkit-animation: fadeIn linear 4s;
+  -moz-animation: fadeIn linear 4s;
+  -o-animation: fadeIn linear 4s;
+  -ms-animation: fadeIn linear 4s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+/* Slogan Fade-in */
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 /* /////////////////////////////// 2nd CONTAINER ///////////////////////////////
@@ -104,12 +142,9 @@ that can be visited on the website */
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  padding-top: 3%;
   width: 100%;
-  min-height: 40vh;
-  max-height: 100vh;
-  margin-top: 2vw;
-  margin-bottom: 2vw;
-  padding-top: 1.5vw;
+  min-height: 50vh;
 }
 
 /* ----------------------------- (popup card) ------------------------------- */
@@ -122,6 +157,7 @@ that can be visited on the website */
   transform: translateY(10px);
   box-shadow: 0 -5px 30px 5px rgba(71,111,255,0.7);
   transition: box-shadow 0.5s ease-in-out;
+  transform: translateY(-0.5%);
 }
 
 #card1:before, #card2:before, #card3:before { 
@@ -393,36 +429,41 @@ This container holds my introduction */
 
 #thirdContainer {
   width: 100vw;
-  min-height: 50vh;
-  max-height: 60vh;
+  min-height: 25vw;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(../Assets/Images/Original/Melbourne_Background_Alexis.jpg);
   background-position: center;
-  background-size: 100vw;
+  background-size: 100%;
   background-repeat: no-repeat;
-  box-shadow: 0 0 40px 40px black;
 }
 
 #introductionContent {
   width: 85vw;
-  min-height: 35vh;
-  max-height: 40vh;
-  background: rgba(71,111,255,0.7);
+  min-height: 15vw;
+  max-height: 30vh;
+  background: rgba(71,111,255,0.9);
   border-radius: 10px;
-  padding: 0 20px 0 20px;
+  padding: 1.5vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 5px 5px rgba(71,111,255,0.9);
 }
 
 #introductionContent  > p {
   text-align: center;
-  font-size: 120%;
+  font-size: 1.5vw;
   color: white;
-  font-family: 'Hind'
+  font-family: 'Hind';
 }
+
+/* /////////////////////////////// 4th CONTAINER ///////////////////////////////
+
+This container holds links to showcase my portfolio */
+
+
 
 /* ------------------------------ F O N T S ------------------------------ */
 
