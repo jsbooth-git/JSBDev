@@ -409,7 +409,7 @@ This container holds my introduction */
 
 #thirdContainer {
   width: 100vw;
-  min-height: 25vw;
+  max-height: 25vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -421,16 +421,13 @@ This container holds my introduction */
 }
 
 #introductionContent {
-  width: 85vw;
-  min-height: 15vw;
-  max-height: 30vh;
-  background: rgba(71,111,255,0.9);
-  border-radius: 10px;
-  padding: 1.5vw;
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0,0,0,0.45);
+  padding: 3.5vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 5px 5px rgba(71,111,255,0.9);
 }
 
 #introductionContent  > p {
