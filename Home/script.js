@@ -1,4 +1,20 @@
-// ------------------------------ POPUP CARD SCRIPT ------------------------- //
+// --------------------- Display Page  and Slogan After Load ----------------- //
+
+var pageHidden = true;
+
+$(window).on('load', function () {
+  $('#pageHidden').css('opacity', '0');
+  pageHidden = false;
+
+  setTimeout(function () {
+    if (pageHidden == false) {
+      $('#pageHidden').remove();
+      $('#slogan').css('opacity', '1');
+    }
+  }, 2300);
+});
+
+// ------------------------------ Popup Card Script ------------------------- //
 
 var popupViews = document.querySelectorAll('.popup-view');
 var popupBtns = document.querySelectorAll('.popup-btn');
