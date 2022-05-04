@@ -39,3 +39,13 @@ closeBtns.forEach((closeBtn) => {
     });
   });
 });
+
+// ------------------------------ Portfolio Script ------------------------- //
+
+var root = document.documentElement;
+const cardLists = document.querySelectorAll('.scroll');
+cardLists.forEach((el) => {
+  const listItems = el.querySelectorAll('li');
+  const n = el.children.length;
+  el.style.setProperty('--total', n);
+});

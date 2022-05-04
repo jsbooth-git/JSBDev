@@ -20,13 +20,14 @@
   padding: 0;
 }
 
-body {
+html, body {
   height: 100%;
+}
+
+body {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   padding: 0;
 }
 
@@ -262,6 +263,7 @@ background-image: url('../Assets/Images/Edited/SoundEng_ProductCard_IvanJermakov
 .card-dimensions .popup-view.active {
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.35s;
 }
 
 .card-dimensions .popup-card {
@@ -439,7 +441,105 @@ This container holds my introduction */
 
 /* /////////////////////////////// 4th CONTAINER ///////////////////////////////
 
-This container holds links to showcase my portfolio */
+This container holds links to showcase my portfolio and defines the scrollbar 
+styles */
+
+#hs-container {
+  padding: var(--gutter) 0;
+  display: grid;
+  grid-gap: var(--gutter) 0;
+  grid-template-columns: var(--gutter) 1fr var(--gutter);
+  align-content: start;
+  --gutter: 20px;
+  width: 100%;
+  height: 50%;
+  background: grey;
+  overflow-y: hidden;
+  border-radius: 10px;
+}
+
+#hs-container {
+  height: 51vh;
+  width: 96vw;
+}
+
+#hs-container > * {
+  grid-column: 2 / -2;
+}
+
+#hs-container > .full {
+  grid-column: 1 / -2;
+}
+
+#hs-container > h1 {
+  text-align: center;
+  margin: 0;
+}
+
+#card-holder:first-child {
+  transform: translateX(-30px);
+}
+
+.hs-params {
+  display: grid;
+  grid-gap: calc(var(--gutter) / 2);
+  grid-template-columns: 10px;
+  grid-template-rows: minmax(150px, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: calc(50% - var(--gutter) * 7);
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+  padding-bottom: calc(1.65 * var(--gutter));
+  margin-bottom: calc(-.25 * var(--gutter));
+}
+
+.hs-params:before,
+.hs-params:after {
+  content: '';
+  width: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hs-params > li, .hs-card {
+  scroll-snap-align: center;
+  padding: calc(var(--gutter) / 2 * 1.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  width: 80%;
+  height: 30vh;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.5)
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.8);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255,255,255,0.4)
+}
+
 
 
 
