@@ -29,16 +29,17 @@ body {
   display: grid;
   place-items: center;
   padding: 0;
+  background-color: rgba(40,40,40,0.8);
 }
 
-#pageBackground {
+.page-background {
   background-position: center;
   background-size: 100%;
   background-image: url('../Assets/Images/Edited/Focus_PageBackground_DavidMonje.jpg');
 }
 
 /* first-background encompasses 1st and 2nd container*/
-#firstBackgroundFilter {
+.page-background-filter {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -420,6 +421,7 @@ This container holds my introduction */
   background-size: 100%;
   background-repeat: no-repeat;
   box-shadow: 0 0 40px 40px black;
+  z-index: 1;
 }
 
 #introductionContent {
@@ -444,6 +446,10 @@ This container holds my introduction */
 This container holds links to showcase my portfolio and defines the scrollbar 
 styles */
 
+#fourthContainer {
+  padding: 7vh;
+}
+
 #hs-container {
   padding: var(--gutter) 0;
   display: grid;
@@ -453,14 +459,14 @@ styles */
   --gutter: 20px;
   width: 100%;
   height: 50%;
-  background: grey;
+  background-color: rgba(39, 81, 163, 0.3);;
   overflow-y: hidden;
   border-radius: 10px;
 }
 
 #hs-container {
-  height: 51vh;
-  width: 96vw;
+  height: 47vh;
+  width: 93vw;
 }
 
 #hs-container > * {
@@ -519,8 +525,9 @@ ul {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 17px;
+  height: 15px;
+  -webkit-box-shadow: 0 0 15px 3px rgb(0,0,0);
 }
 
 ::-webkit-scrollbar-track {
