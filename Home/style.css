@@ -1,663 +1,668 @@
 /* -------------------------------- Main -------------------------------------- */
 
 #pageHidden {
-  position: fixed; 
-  height: 100%; 
-  width: 100%; 
-  top:0; 
-  left: 0; 
-  background: #000; 
-  z-index: 9999;
-  transition: opacity 2s;
-}
-
-:root {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  width: 100%;
-  display: grid;
-  place-items: center;
-  padding: 0;
-  background-color: rgba(40,40,40,0.8);
-}
-
-.page-background {
-  background-position: center;
-  background-size: 100%;
-  background-image: url('../Assets/Images/Edited/Focus_PageBackground_DavidMonje.jpg');
-}
-
-/* first-background encompasses 1st and 2nd container*/
-.page-background-filter {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgba(0,0,0,0.8);
-  height: 100%;
-  width: 100%;
-}
-
-/* /////////////////////////////// 1st CONTAINER ///////////////////////////////
-
-This is the page header with background, logo and slogan */
-
-#firstContainer {
-  width: 100vw;
-  min-height: 25vh;
-  max-height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(+3vw);
-  margin-bottom: 0.1%;
-}
-
-#pageHeader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 98vw;
-  height: 45vw;
-  max-height: 50vh;
-  margin-top: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url('../Assets/Images/Edited/Galaxy_Background_GregoryHayes.jpg');
-  box-shadow: 0 0 40px 40px black;
-}
-
-#logoAndSlogan {
-  border-radius: 15px;
-  width: 50%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content:end;
-  align-items: center;
-  text-align: center;
-  padding-top: 9vw;
-}
-
-#logoAndSlogan > img {
-  display: block;
-  margin-bottom: 50px;
-  width: 110%;
-  max-width: 80vh;
-  padding-top: 1vw;
-}
-
-#slogan {
-  margin: 0;
-  text-align: center;
-  color: white;
-  width: 100%;
-  font-family: 'Teko';
-  letter-spacing: 1.2vw;
-  font-size: 1.5vw;
-  padding-bottom: 4vh;
-  text-shadow: 4px 4px 1px rgb(8, 8, 8);
-  transform: translateY(-75px);
-  opacity: 0;
-  transition: opacity 4s;
-}
-
-/* /////////////////////////////// 2nd CONTAINER ///////////////////////////////
-
-This is the container holding the popup view cards for the brief on each section
-that can be visited on the website */
-
-#secondContainer {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  padding-top: 3%;
-  width: 100%;
-  min-height: 50vh;
-}
-
-/* ----------------------------- (popup card) ------------------------------- */
-
-#card1, #card2, #card3 {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  transform: translateY(10px);
-  box-shadow: 0 -5px 30px 5px rgba(71,111,255,0.7);
-  transition: box-shadow 0.5s ease-in-out;
-  transform: translateY(-0.5%);
-}
-
-#card1:before, #card2:before, #card3:before { 
-  background: rgba(255, 255, 255, 0.9);
-  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
-}
-
-#card1:before {
-  content: 'WEB DEVELOPMENT';
-}
-
-#card2:before {
-  content: 'MY FOCUS'
-}
-
-#card3:before {
-  content: 'SOUND ENGINEERING'
-}
-
-#card1:hover, #card2:hover, #card3:hover {
-  box-shadow: 0 -5px 30px 5px rgba(255, 255, 255, 0.7);
-  transition: box-shadow 0.5s ease-in-out;
-}
-
-#popup-btn1, #popup-btn2, #popup-btn3 {
-  transition: background-color 0.5s ease-in-out, 
-  color 0.5s ease-in-out;
-}
-
-#popup-btn1:hover, #popup-btn2:hover, #popup-btn3:hover {
-  transition: background-color 0.5s ease-in-out, 
-  color 0.5s ease-in-out;
-}
-
-#card1:hover > #popup-btn1, #card2:hover > #popup-btn2, #card3:hover > #popup-btn3{
-  background-color: rgba(71,111,255,0.7);
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-  color: white;
-}
-
-#card1:hover:before,  #card2:hover:before, #card3:hover:before{
-  background-color: rgba(71,111,255,0.7);
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-  color: white;
-}
-
-#card1 {
-  background-image: url('../Assets/Images/Original/WebDev_ProductCard_AlesNesetril.jpg');
-}
-
-#card2 {
-background-image: url('../Assets/Images/Edited/Focus_ProductCard_DavidMonje.jpg');
-}
-
-#card3 {
-background-image: url('../Assets/Images/Edited/SoundEng_ProductCard_IvanJermakov.jpg');}
-
-.card-dimensions .default-card {
-  z-index: 1;
-  position: relative;
-  min-width: 300px;
-  max-width: 20vw;
-  height: 30vh;
-  margin: 40px;
-  border-radius: 10px;
-}
-
-.card-dimensions .default-card:before {
-  position: absolute;
-  font-weight: 600;
-  font-family: 'IBM Plex Sans', sans-serif;
-  width: 100%;
-  height: 20%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: 2.5px;
-}
-
-.card-dimensions .default-card .popup-btn {
-  z-index: 2;
-  color: black;
-  background: rgba(255, 255, 255, 0.7);
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 12pt;
-  text-decoration: none;
-  padding-left: 7px;
-  padding-top: 3px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: 'Teko';
-  letter-spacing: 6px;
-  text-align: center;
-  width: 30%;
-  margin-bottom: 11px;
-  line-height: 25px;
-}
-
-/* ----------------------------- (popup view) ------------------------------- */
-
-.card-dimensions .popup-view {
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.7);
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.35s;
-}
-
-.card-dimensions .popup-view.active {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.35s;
-}
-
-.card-dimensions .popup-card {
-  position: relative;
-  display: flex;
-  width: 800px;
-  height: 500px;
-  margin: 20px;
-}
-
-.card-dimensions .popup-card .card-bg {
-  z-index: 2;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 45%;
-  height: 90%;
-  transform: translateY(25px);
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-#card1-dimensions .popup-card .card-bg {
-  background-image: url('../Assets/Images/Original/WebDev_ProductCard_AlesNesetril.jpg');
-}
-
-#card2-dimensions .popup-card .card-bg {
-  background-image: url('../Assets/Images/Edited/Focus_ProductCard_DavidMonje.jpg');
-}
-
-#card3-dimensions .popup-card .card-bg {
-  background-image: url('../Assets/Images/Edited/SoundEng_ProductCard_IvanJermakov.jpg');
-}
-
-.card-dimensions .popup-card .info {
-  z-index: 2;
-  background: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: column;
-  width: 55%;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 40px;
-  border-radius: 10px;
-}
-
-.card-dimensions .popup-card .fa-xmark {
-  color: rgb(10, 10, 10);
-  z-index: 3;
-  position: absolute;
-  right: 0;
-  font-size: 15pt;
-  margin: 20px;
-  cursor: pointer;
-}
-
-.card-dimensions .popup-card .info h2 {
-  font-family: 'Teko';
-  font-size: 18pt;
-  line-height: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
-  transform: translateY(-5px);
-  letter-spacing: 6px;
-}
-
-.card-dimensions .popup-card .info p {
-  font-size: 12pt;
-  margin: 10px;
-  text-align: center;
-  font-family: 'IBM Plex Sans', sans-serif;
-}
-
-.card-dimensions .popup-card .info .read-more-btn {
-  color: #fff;
-  background-color: rgb(71,111,255);
-  font-size: 13pt;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  margin: auto;
-  padding: 10px 50px;
-  border-radius: 20px;
-  letter-spacing: 3px;
-  font-family: 'Hind', sans-serif;
-}
-
-/* --------------------------- (card reponsiveness) -------------------------- */
-
-@media (max-width: 900px) {
-  .card-dimensions .popup-card {
+    position: fixed; 
+    height: 100%; 
+    width: 100%; 
+    top:0; 
+    left: 0; 
+    background: #000; 
+    z-index: 9999;
+    transition: opacity 2s;
+  }
+  
+  :root {
+    box-sizing: border-box;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    background-color: rgba(40,40,40,0.8);
+  
+  }
+  
+  .page-background {
+    background-position: center;
+    background-size: 100%;
+    background-image: url('../Assets/Images/Edited/Focus_PageBackground_DavidMonje.jpg');
+  }
+  
+  /* first-background encompasses 1st and 2nd container*/
+  .page-background-filter {
+    display: flex;
+    align-items: center;
     flex-direction: column;
-    width: 550px;
-    height: auto;
+    background-color: rgba(0,0,0,0.5);
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* /////////////////////////////// 1st CONTAINER ///////////////////////////////
+  
+  This is the page header with background, logo and slogan */
+  
+  #firstContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.1%;
+    min-height: 40vh;
+    margin-top: 5%;
+  }
+  
+  #pageHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: absolute;
+    background-image: url('../Assets/Images/Edited/Galaxy_Background_GregoryHayes.jpg');
+    box-shadow: 0 0 40px 40px black;
+    z-index: 2;
+    min-height: 50vh;
+    
+  }
+  
+  #logoAndSlogan {
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;    
+  }
+  
+  #logoAndSlogan > img {
+    display: block;
+    min-width: 350px;
+    width: 35vw;
+  }
+  
+  #slogan1, #slogan2 {
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-family: 'Teko';
+    letter-spacing: 3vw;
+    font-size: 0.45vh * 2vw;
+    text-shadow: 4px 4px 1px rgb(8, 8, 8);
+    opacity: 0;
+    margin-bottom: 5%;
   }
 
-  .card-dimensions .popup-card .card-bg {
-    z-index: 3;
+  #slogan1 {
+    transition: opacity 5s;
+}
+
+  #slogan2 {
+    transition: opacity 5s;
+  }
+
+  #logoAndSlogan > img, 
+  #slogan1, 
+  #slogan2 {
+      transform: translateY(-5%); 
+  }
+  
+  /* /////////////////////////////// 2nd CONTAINER ///////////////////////////////
+  
+  This is the container holding the popup view cards for the brief on each section
+  that can be visited on the website */
+  
+  #secondContainer {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    min-height: 50vh;
+  }
+  
+  /* ----------------------------- (popup card) ------------------------------- */
+  
+  #card1, #card2, #card3 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    transform: translateY(10px);
+    box-shadow: 0 -5px 30px 5px rgba(71,111,255,0.7);
+    transition: box-shadow 0.5s ease-in-out;
+    transform: translateY(-0.5%);
+  }
+  
+  #card1:before, #card2:before, #card3:before { 
+    background: rgba(255, 255, 255, 0.9);
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  }
+  
+  #card1:before {
+    content: 'WEB DEVELOPMENT';
+  }
+  
+  #card2:before {
+    content: 'MY FOCUS'
+  }
+  
+  #card3:before {
+    content: 'SOUND ENGINEERING'
+  }
+  
+  #card1:hover, #card2:hover, #card3:hover {
+    box-shadow: 0 -5px 30px 5px rgba(255, 255, 255, 0.7);
+    transition: box-shadow 0.5s ease-in-out;
+  }
+  
+  #popup-btn1, #popup-btn2, #popup-btn3 {
+    transition: background-color 0.5s ease-in-out, 
+    color 0.5s ease-in-out;
+  }
+  
+  #popup-btn1:hover, #popup-btn2:hover, #popup-btn3:hover {
+    transition: background-color 0.5s ease-in-out, 
+    color 0.5s ease-in-out;
+  }
+  
+  #card1:hover > #popup-btn1, #card2:hover > #popup-btn2, #card3:hover > #popup-btn3{
+    background-color: rgba(71,111,255,0.7);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    color: white;
+  }
+  
+  #card1:hover:before,  #card2:hover:before, #card3:hover:before{
+    background-color: rgba(71,111,255,0.7);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    color: white;
+  }
+  
+  #card1 {
+    background-image: url('../Assets/Images/Original/WebDev_ProductCard_AlesNesetril.jpg');
+  }
+  
+  #card2 {
+  background-image: url('../Assets/Images/Edited/Focus_ProductCard_DavidMonje.jpg');
+  }
+  
+  #card3 {
+  background-image: url('../Assets/Images/Edited/SoundEng_ProductCard_IvanJermakov.jpg');}
+  
+  .card-dimensions .default-card {
+    z-index: 1;
+    position: relative;
+    min-width: 300px;
+    max-width: 20vw;
+    height: 30vh;
+    margin: 40px;
+    border-radius: 10px;
+  }
+  
+  .card-dimensions .default-card:before {
+    position: absolute;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans', sans-serif;
     width: 100%;
-    height: 200px;
-    transform: translateY(0);
+    height: 20%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom-left-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2.5px;
   }
-
+  
+  .card-dimensions .default-card .popup-btn {
+    z-index: 2;
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12pt;
+    text-decoration: none;
+    padding-left: 7px;
+    padding-top: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Teko';
+    letter-spacing: 6px;
+    text-align: center;
+    width: 30%;
+    margin-bottom: 11px;
+    line-height: 25px;
+  }
+  
+  /* ----------------------------- (popup view) ------------------------------- */
+  
+  .card-dimensions .popup-view {
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.35s;
+  }
+  
+  .card-dimensions .popup-view.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.35s;
+  }
+  
+  .card-dimensions .popup-card {
+    position: relative;
+    display: flex;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+  }
+  
+  .card-dimensions .popup-card .card-bg {
+    z-index: 2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 90%;
+    transform: translateY(25px);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  #card1-dimensions .popup-card .card-bg {
+    background-image: url('../Assets/Images/Original/WebDev_ProductCard_AlesNesetril.jpg');
+  }
+  
+  #card2-dimensions .popup-card .card-bg {
+    background-image: url('../Assets/Images/Edited/Focus_ProductCard_DavidMonje.jpg');
+  }
+  
+  #card3-dimensions .popup-card .card-bg {
+    background-image: url('../Assets/Images/Edited/SoundEng_ProductCard_IvanJermakov.jpg');
+  }
+  
   .card-dimensions .popup-card .info {
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    z-index: 2;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 10px;
   }
-
-  .card-dimensions .popup-card .info h2 {
-    margin: 10px 5px 5px 5px;
-    font-size: 25px;
-  }
-
-  .card-dimensions .popup-card .info p {
-    margin: 5px;
-    font-size: 13px;
-  }
-
-  .card-dimensions .popup-card .info .read-more-btn {
-    margin: 5px auto;
-    padding: 5px 40px;
-    font-size: 14px;
-  }
-
+  
   .card-dimensions .popup-card .fa-xmark {
-    z-index: 4;
+    color: rgb(10, 10, 10);
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    font-size: 15pt;
+    margin: 20px;
+    cursor: pointer;
   }
-}
+  
+  .card-dimensions .popup-card .info h2 {
+    font-family: 'Teko';
+    font-size: 18pt;
+    line-height: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    transform: translateY(-5px);
+    letter-spacing: 6px;
+  }
+  
+  .card-dimensions .popup-card .info p {
+    font-size: 12pt;
+    margin: 10px;
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  
+  .card-dimensions .popup-card .info .read-more-btn {
+    color: #fff;
+    background-color: rgb(71,111,255);
+    font-size: 13pt;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+    padding: 10px 50px;
+    border-radius: 20px;
+    letter-spacing: 3px;
+    font-family: 'Hind', sans-serif;
+  }
+  
+  /* --------------------------- (card reponsiveness) -------------------------- */
+  
+  @media (max-width: 900px) {
+    .card-dimensions .popup-card {
+      flex-direction: column;
+      width: 550px;
+      height: auto;
+    }
+  
+    .card-dimensions .popup-card .card-bg {
+      z-index: 3;
+      width: 100%;
+      height: 200px;
+      transform: translateY(0);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 0;
+    }
+  
+    .card-dimensions .popup-card .info {
+      width: 100%;
+      height: auto;
+      padding: 20px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  
+    .card-dimensions .popup-card .info h2 {
+      margin: 10px 5px 5px 5px;
+      font-size: 25px;
+    }
+  
+    .card-dimensions .popup-card .info p {
+      margin: 5px;
+      font-size: 13px;
+    }
+  
+    .card-dimensions .popup-card .info .read-more-btn {
+      margin: 5px auto;
+      padding: 5px 40px;
+      font-size: 14px;
+    }
+  
+    .card-dimensions .popup-card .fa-xmark {
+      z-index: 4;
+    }
+  }
 
 /* /////////////////////////////// 3rd CONTAINER ///////////////////////////////
 
 This container holds my introduction */
 
 #thirdContainer {
-  width: 100vw;
-  max-height: 25vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(../Assets/Images/Original/Melbourne_Background_Alexis.jpg);
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  box-shadow: 0 0 40px 40px black;
-  z-index: 1;
-}
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../Assets/Images/Original/Melbourne_Background_Alexis.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 40px 40px black;
+    z-index: 1;
+  }
+  
+  #introductionContent {
+    width: 100%;
+    height: 47vh * 18vw;
+    background-color: rgba(0,0,0,0.65);
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #introductionContent > p {
+    text-align: center;
+    font-size: 0.45vh * 1.8vw;
+    letter-spacing: 0.4vw;
+    color: white;
+    font-family: 'Hind';
+  }
+  
+  /* /////////////////////////////// 4th CONTAINER ///////////////////////////////
+  
+  This container holds links to showcase my portfolio and defines the scrollbar 
+  styles */
+  
+  #fourthContainer {
+    width: 100vw;
+    height: 60vh;
+  }
+  
+  #hs-container {
+    padding: var(--gutter) 0;
+    display: grid;
+    grid-gap: var(--gutter) 0;
+    grid-template-columns: var(--gutter) 1fr var(--gutter);
+    align-content: start;
+    --gutter: 1%;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(39, 81, 163, 0.3);;
+    overflow-y: hidden;
+  }
+  
+  #hs-container {
+    height: 100%;
+    width: 100%;
+  }
+  
+  #hs-container > * {
+    grid-column: 2 / -2;
+  }
+  
+  #hs-container > .full {
+    grid-column: 1 / -2;
+  }
+  
+  #hs-container > h1 {
+    text-align: center;
+    margin-bottom: 1.5%;
+  }
 
-#introductionContent {
-  width: inherit;
-  height: inherit;
-  background-color: rgba(0,0,0,0.45);
-  padding: 3.5vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#introductionContent  > p {
-  text-align: center;
-  font-size: 1.5vw;
-  color: white;
-  font-family: 'Hind';
-}
-
-/* /////////////////////////////// 4th CONTAINER ///////////////////////////////
-
-This container holds links to showcase my portfolio and defines the scrollbar 
-styles */
-
-#fourthContainer {
-  padding: 7vh;
-}
-
-#hs-container {
-  padding: var(--gutter) 0;
-  display: grid;
-  grid-gap: var(--gutter) 0;
-  grid-template-columns: var(--gutter) 1fr var(--gutter);
-  align-content: start;
-  --gutter: 20px;
-  width: 100%;
-  height: 50%;
-  background-color: rgba(39, 81, 163, 0.3);;
-  overflow-y: hidden;
-  border-radius: 10px;
-}
-
-#hs-container {
-  height: 47vh;
-  width: 93vw;
-}
-
-#hs-container > * {
-  grid-column: 2 / -2;
-}
-
-#hs-container > .full {
-  grid-column: 1 / -2;
-}
-
-#hs-container > h1 {
-  text-align: center;
-  margin: 0;
-}
-
-#card-holder:first-child {
-  transform: translateX(-30px);
-}
-
-.hs-params {
-  display: grid;
-  grid-gap: calc(var(--gutter) / 2);
-  grid-template-columns: 10px;
-  grid-template-rows: minmax(150px, 1fr);
-  grid-auto-flow: column;
-  grid-auto-columns: calc(50% - var(--gutter) * 7);
-  overflow-x: scroll;
-  scroll-snap-type: x proximity;
-  padding-bottom: calc(1.65 * var(--gutter));
-  margin-bottom: calc(-.25 * var(--gutter));
-}
-
-.hs-params:before,
-.hs-params:after {
-  content: '';
-  width: 10px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-.hs-params > li, .hs-card {
-  scroll-snap-align: center;
-  padding: calc(var(--gutter) / 2 * 1.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  border-radius: 8px;
-  width: 80%;
-  height: 30vh;
-  box-shadow: inset 0 0 12px rgba(0,0,0,0.5)
-}
-
-::-webkit-scrollbar {
-  width: 17px;
-  height: 15px;
-  -webkit-box-shadow: 0 0 15px 3px rgb(0,0,0);
-}
-
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.8);
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
-
-::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(255,255,255,0.4)
-}
-
-
-
+  #card-holder {
+      height: 150%;
+  }
+  
+  #card-holder:first-child {
+    margin-left: 0;
+  }
+  
+  .hs-params {
+    display: grid;
+    grid-gap: calc(var(--gutter) / 1.5);
+    grid-template-columns: 10px;
+    grid-template-rows: minmax(150px, 1fr);
+    grid-auto-flow: column;
+    grid-auto-columns: calc(30% - var(--gutter) * 8);
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    padding-bottom: calc(1.65 * var(--gutter));
+    margin-bottom: calc(-.25 * var(--gutter));
+  }
+  
+  .hs-params:before,
+  .hs-params:after {
+    content: '';
+    width: 2%;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    height: 120%;
+  }
+  
+  .hs-params > li, .hs-card {
+    scroll-snap-align: center;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    width: 55%;
+    height: 90%;
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.5)
+  }
+  
+  ::-webkit-scrollbar {
+    width: 17px;
+    height: 15px;
+    -webkit-box-shadow: 0 0 15px 3px rgb(0,0,0);
+  }
+  
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  }
+  
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255,255,255,0.4)
+  }
 
 /* ------------------------------ F O N T S ------------------------------ */
 
 /* latin-ext */
 @font-face {
-  font-family: 'Bebas Neue';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/bebasneue/v8/JTUSjIg69CK48gW7PXoo9Wdhyzbi.woff2)
-    format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* latin */
-@font-face {
-  font-family: 'Bebas Neue';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/bebasneue/v8/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2)
-    format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: 'Staatliches';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/staatliches/v10/HI_OiY8KO6hCsQSoAPmtMYeVvpCNOw.woff2)
-    format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* latin */
-@font-face {
-  font-family: 'Staatliches';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/staatliches/v10/HI_OiY8KO6hCsQSoAPmtMYebvpA.woff2)
-    format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: 'Teko';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/teko/v14/LYjCdG7kmE0gdVBesCpgqGIu.woff2)
-    format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Teko';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/teko/v14/LYjCdG7kmE0gdVBesCRgqA.woff2)
-    format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/ibmplexsans/v13/zYXgKVElMYYaJe8bpLHnCwDKhd_eFb5N.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/ibmplexsans/v13/zYXgKVElMYYaJe8bpLHnCwDKhdHeFQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: 'Hind';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/hind/v15/5aU69_a8oxmIdGd4BCOz.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Hind';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/hind/v15/5aU69_a8oxmIdGl4BA.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/bebasneue/v8/JTUSjIg69CK48gW7PXoo9Wdhyzbi.woff2)
+      format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+      U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  
+  /* latin */
+  @font-face {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/bebasneue/v8/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2)
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+      U+FEFF, U+FFFD;
+  }
+  
+  /* latin-ext */
+  @font-face {
+    font-family: 'Staatliches';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/staatliches/v10/HI_OiY8KO6hCsQSoAPmtMYeVvpCNOw.woff2)
+      format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+      U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  
+  /* latin */
+  @font-face {
+    font-family: 'Staatliches';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/staatliches/v10/HI_OiY8KO6hCsQSoAPmtMYebvpA.woff2)
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+      U+FEFF, U+FFFD;
+  }
+  
+  /* latin-ext */
+  @font-face {
+    font-family: 'Teko';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/teko/v14/LYjCdG7kmE0gdVBesCpgqGIu.woff2)
+      format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+      U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Teko';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/teko/v14/LYjCdG7kmE0gdVBesCRgqA.woff2)
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+      U+FEFF, U+FFFD;
+  }
+  
+  /* latin-ext */
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/ibmplexsans/v13/zYXgKVElMYYaJe8bpLHnCwDKhd_eFb5N.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/ibmplexsans/v13/zYXgKVElMYYaJe8bpLHnCwDKhdHeFQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  
+  /* latin-ext */
+  @font-face {
+    font-family: 'Hind';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/hind/v15/5aU69_a8oxmIdGd4BCOz.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Hind';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/hind/v15/5aU69_a8oxmIdGl4BA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }

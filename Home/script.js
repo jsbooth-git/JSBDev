@@ -9,9 +9,15 @@ $(window).on('load', function () {
   setTimeout(function () {
     if (pageHidden == false) {
       $('#pageHidden').remove();
-      $('#slogan').css('opacity', '1');
+      $('#slogan1').css('opacity', '1');
     }
-  }, 2300);
+  }, 2000);
+
+  setTimeout(function () {
+    if (pageHidden == false) {
+      $('#slogan2').css('opacity', '1');
+    }
+  }, 4000);
 });
 
 // ------------------------------ Popup Card Script ------------------------- //
