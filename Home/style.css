@@ -26,7 +26,6 @@
     place-items: center;
     padding: 0;
     background-color: rgba(40,40,40,0.8);
-  
   }
   
   .page-background {
@@ -78,29 +77,27 @@
   #logoAndSlogan {
     display: flex;
     flex-direction: column;
-    justify-content:end;
+    justify-content: center;
     align-items: center;
-    text-align: center;
     margin: 0;
     padding: 0;    
   }
   
   #logoAndSlogan > img {
-    display: block;
     min-width: 350px;
     width: 35vw;
   }
   
   #slogan1, #slogan2 {
     margin: 0;
-    text-align: center;
     color: white;
     font-family: 'Teko';
-    letter-spacing: 3vw;
+    letter-spacing: 2.8vw;
     font-size: 0.45vh * 2vw;
     text-shadow: 4px 4px 1px rgb(8, 8, 8);
     opacity: 0;
     margin-bottom: 5%;
+    text-align: center;
   }
 
   #slogan1 {
@@ -109,12 +106,6 @@
 
   #slogan2 {
     transition: opacity 5s;
-  }
-
-  #logoAndSlogan > img, 
-  #slogan1, 
-  #slogan2 {
-      transform: translateY(-5%); 
   }
   
   /* /////////////////////////////// 2nd CONTAINER ///////////////////////////////
@@ -415,6 +406,7 @@ This container holds my introduction */
 
 #thirdContainer {
     width: 100%;
+    height: 47vh * 18vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -424,13 +416,14 @@ This container holds my introduction */
     background-repeat: no-repeat;
     box-shadow: 0 0 40px 40px black;
     z-index: 1;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    background-color: rgba(0,0,0,0.5);
   }
   
   #introductionContent {
     width: 100%;
-    height: 47vh * 18vw;
-    background-color: rgba(0,0,0,0.65);
-    padding: 2%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -438,10 +431,12 @@ This container holds my introduction */
   
   #introductionContent > p {
     text-align: center;
-    font-size: 0.45vh * 1.8vw;
+    font-size: 18pt;
     letter-spacing: 0.4vw;
     color: white;
     font-family: 'Hind';
+    padding-left: 2%;
+    padding-right: 2%;
   }
   
   /* /////////////////////////////// 4th CONTAINER ///////////////////////////////
@@ -451,25 +446,27 @@ This container holds my introduction */
   
   #fourthContainer {
     width: 100vw;
-    height: 60vh;
+    height: 78vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
   }
   
+  #fourthContainer > h1 {
+    text-align: center;
+    font-size: 350%;
+    margin: 0;
+}
+
   #hs-container {
-    padding: var(--gutter) 0;
     display: grid;
     grid-gap: var(--gutter) 0;
     grid-template-columns: var(--gutter) 1fr var(--gutter);
-    align-content: start;
+    align-content: center;
     --gutter: 1%;
-    width: 100%;
-    height: 50%;
-    background-color: rgba(39, 81, 163, 0.3);;
+    width: 90%;
     overflow-y: hidden;
-  }
-  
-  #hs-container {
-    height: 100%;
-    width: 100%;
   }
   
   #hs-container > * {
@@ -479,31 +476,19 @@ This container holds my introduction */
   #hs-container > .full {
     grid-column: 1 / -2;
   }
-  
-  #hs-container > h1 {
-    text-align: center;
-    margin-bottom: 1.5%;
-  }
 
   #card-holder {
       height: 150%;
   }
   
-  #card-holder:first-child {
-    margin-left: 0;
-  }
-  
   .hs-params {
     display: grid;
-    grid-gap: calc(var(--gutter) / 1.5);
     grid-template-columns: 10px;
-    grid-template-rows: minmax(150px, 1fr);
+    grid-template-rows: minmax(50px, 1fr);
     grid-auto-flow: column;
-    grid-auto-columns: calc(30% - var(--gutter) * 8);
-    overflow-x: scroll;
-    scroll-snap-type: x proximity;
-    padding-bottom: calc(1.65 * var(--gutter));
-    margin-bottom: calc(-.25 * var(--gutter));
+    grid-auto-columns: calc(31.5% - var(--gutter) * 6.5); /* Make this last value 1.5 higher than the number of cards */
+    align-content: center;
+    padding-bottom: 1%;
   }
   
   .hs-params:before,
@@ -515,26 +500,26 @@ This container holds my introduction */
   ul {
     list-style: none;
     padding: 0;
-    height: 120%;
+    height: 80%;
   }
   
   .hs-params > li, .hs-card {
     scroll-snap-align: center;
-    padding: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: #fff;
     border-radius: 8px;
-    width: 55%;
-    height: 90%;
-    box-shadow: inset 0 0 12px rgba(0,0,0,0.5)
+    height: 380px;
+    width: 420px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5)
   }
   
   ::-webkit-scrollbar {
     width: 17px;
     height: 15px;
+    -webkit-border-radius: 10px;
     -webkit-box-shadow: 0 0 15px 3px rgb(0,0,0);
   }
   
@@ -554,6 +539,17 @@ This container holds my introduction */
   ::-webkit-scrollbar-thumb:window-inactive {
     background: rgba(255,255,255,0.4)
   }
+
+/*------------------- Horizontal Scroll Responsiveness --------------------*/
+
+@media (max-width: 900px) {
+
+  .hs-params > li, .hs-card {
+    height: 300px;
+    width: 340px;
+  }
+
+}
 
 /* ------------------------------ F O N T S ------------------------------ */
 
