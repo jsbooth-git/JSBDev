@@ -24,8 +24,12 @@
     width: 100%;
     display: grid;
     place-items: center;
-    padding: 0;
-    background-color: rgba(40,40,40,0.8);
+    background-color: rgb(0,0,0);
+    overflow-x: hidden;
+  }
+
+  #firstContainer, #secondContainer, #thirdContainer, #fourthContainer {
+    width: 99vw;
   }
   
   .page-background {
@@ -49,7 +53,6 @@
   This is the page header with background, logo and slogan */
   
   #firstContainer {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +82,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 2%;  
+    padding-bottom: 1%;  
   }
   
   #logoAndSlogan > img {
@@ -90,12 +93,13 @@
   #slogan1, #slogan2 {
     color: white;
     font-family: 'Teko';
-    letter-spacing: 2.2vw;
+    letter-spacing: 3.2vw;
     font-size: 0.45vh * 2vw;
     text-shadow: 4px 4px 1px rgb(8, 8, 8);
     opacity: 0;
     text-align: center;
     padding-left: 5%;
+    width: 100%;
   }
 
   #slogan1 {
@@ -119,7 +123,6 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    width: 100vw;
     min-height: 50vh;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -141,6 +144,11 @@
   #card1:before, #card2:before, #card3:before { 
     background: rgba(255, 255, 255, 0.9);
     transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    font-family: 'Teko';
+    font-size: 22pt;
+    font-weight: 200;
+    padding-top: 2%;
+    padding-bottom: 2%;
   }
   
   #card1:before {
@@ -225,7 +233,7 @@
     bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 12pt;
+    font-size: 14pt;
     text-decoration: none;
     padding-left: 7px;
     padding-top: 3px;
@@ -236,7 +244,6 @@
     text-align: center;
     width: 30%;
     margin-bottom: 11px;
-    line-height: 25px;
   }
   
   /* ----------------------------- (popup view) ------------------------------- */
@@ -324,7 +331,7 @@
   
   .card-dimensions .popup-card .info h2 {
     font-family: 'Teko';
-    font-size: 18pt;
+    font-size: 22pt;
     line-height: 20px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -383,7 +390,7 @@
   
     .card-dimensions .popup-card .info h2 {
       margin: 10px 5px 5px 5px;
-      font-size: 25px;
+      font-size: 22pt;
     }
   
     .card-dimensions .popup-card .info p {
@@ -410,7 +417,6 @@
 This container holds my introduction */
 
 #thirdContainer {
-    width: 100%;
     height: 47vh * 18vw;
     display: flex;
     justify-content: center;
@@ -441,7 +447,7 @@ This container holds my introduction */
     color: rgb(255, 225, 255);
     font-family: 'Hind';
     font-weight: 900;
-    text-shadow: 2px 2px rgba(0,0,0,0.75);
+    text-shadow: 2px 2px rgba(0,0,0,0.65);
     padding-left: 2%;
     padding-right: 2%;
   }
@@ -452,7 +458,6 @@ This container holds my introduction */
   styles */
   
   #fourthContainer {
-    width: 100vw;
     height: 70vh;
     display: flex;
     justify-content: space-evenly;
@@ -466,7 +471,7 @@ This container holds my introduction */
     text-align: center;
     font-size: 350%;
     margin: 0;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.9);
     margin-bottom: 2vh;
     z-index: 1;
     font-family: 'Teko';
@@ -504,15 +509,19 @@ This container holds my introduction */
     grid-template-columns: 10px;
     grid-template-rows: minmax(50px, 1fr);
     grid-auto-flow: column;
-    grid-auto-columns: calc(31.5% - var(--gutter) * 6.5); /* Make this last value 1.5 higher than the number of cards */
+    grid-auto-columns: calc(29% - var(--gutter) * 6.5); /* Make this last value 1.5 higher than the number of cards */
     align-content: center;
     padding-bottom: 1%;
   }
   
-  .hs-params:before,
+  .hs-params:before {
+    content: '';
+    width: 6%;
+  }
+
   .hs-params:after {
     content: '';
-    width: 2%;
+    width: 6%;
   }
   
   ul {
