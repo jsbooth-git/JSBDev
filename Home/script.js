@@ -11,13 +11,13 @@ $(window).on('load', function () {
       $('#pageHidden').remove();
       $('#slogan1').css('opacity', '1');
     }
-  }, 2000);
+  }, 200);
 
   setTimeout(function () {
     if (pageHidden == false) {
       $('#slogan2').css('opacity', '1');
     }
-  }, 4000);
+  }, 3500);
 });
 
 // ------------------------------ Popup Card Script ------------------------- //
