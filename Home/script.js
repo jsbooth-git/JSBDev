@@ -1,7 +1,6 @@
 // --------------------- Display Page  and Slogan After Load ----------------- //
 
-var pageHidden = true;
-
+let pageHidden = true;
 $(window).on('load', function () {
   $('#pageHidden').css('opacity', '0');
   pageHidden = false;
@@ -11,23 +10,23 @@ $(window).on('load', function () {
       $('#pageHidden').remove();
       $('#slogan1').css('opacity', '1');
     }
-  }, 200);
+  }, 300);
 
   setTimeout(function () {
     if (pageHidden == false) {
       $('#slogan2').css('opacity', '1');
     }
-  }, 3500);
+  }, 900);
 });
 
 // ------------------------------ Popup Card Script ------------------------- //
 
-var popupViews = document.querySelectorAll('.popup-view');
-var popupBtns = document.querySelectorAll('.popup-btn');
-var closeBtns = document.querySelectorAll('.fa-xmark');
+let popupViews = document.querySelectorAll('.popup-view');
+let popupBtns = document.querySelectorAll('.popup-btn');
+let closeBtns = document.querySelectorAll('.fa-xmark');
 
 // View button functionality
-var popup = function (popupClick) {
+let popup = function (popupClick) {
   popupViews[popupClick].classList.add('active');
 };
 
@@ -48,7 +47,7 @@ closeBtns.forEach((closeBtn) => {
 
 // ------------------------------ Portfolio Script ------------------------- //
 
-var root = document.documentElement;
+let root = document.documentElement;
 const cardLists = document.querySelectorAll('.scroll');
 cardLists.forEach((el) => {
   const listItems = el.querySelectorAll('li');
