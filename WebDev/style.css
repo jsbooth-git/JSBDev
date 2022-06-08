@@ -7,9 +7,6 @@ body {
 .container {
     position: sticky;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .image-container {
@@ -17,5 +14,6 @@ body {
     height: 0;
     position: fixed;
     top: 0;
+    background: center center;
     background-size: contain;
 }
