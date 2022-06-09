@@ -1,6 +1,6 @@
 /* -------------------------------- Main -------------------------------------- */
 
-#pageHidden {
+  #pageHidden {
     position: fixed; 
     height: 100%; 
     width: 100%; 
@@ -18,22 +18,26 @@
     margin: 0;
     padding: 0;
   }
+
+  html {
+    width: 99vw;
+    overflow-x: hidden;
+  }
   
   body {
-    width: 100%;
+    width: 100vw;
     display: grid;
     place-items: center;
     background-color: rgb(0,0,0);
-    overflow-x: hidden;
   }
 
   #firstContainer, #secondContainer, #thirdContainer, #fourthContainer {
-    width: 99vw;
+    width: 98vw;
   }
   
   .page-background {
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     background-image: url('Media/Focus_PageBackground_DavidMonje.jpg');
   }
   
@@ -44,7 +48,7 @@
     flex-direction: column;
     background-color: rgba(0,0,0,0.5);
     height: 100%;
-    width: 100%;
+    width: 99vw;
   }
   
   /* /////////////////////////////// 1st CONTAINER ///////////////////////////////
@@ -73,7 +77,6 @@
     box-shadow: 0 0 40px 40px black;
     z-index: 2;
     min-height: 33vh;
-    
   }
   
   #logoAndSlogan {
@@ -81,7 +84,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 1%;  
+    width: 100%;
+    min-height: 28vh;
   }
   
   #logoAndSlogan > img {
@@ -91,25 +95,26 @@
   
   #slogan1, #slogan2 {
     color: white;
-    font-family: 'Teko';
-    letter-spacing: 3.2vw;
-    font-size: 0.45vh * 2vw;
+    font-family: 'Hind';
+    letter-spacing: 2vw;
+    font-size: 30pt;
+    font-weight: 900;
+    line-height: 100%;
     text-shadow: 4px 4px 1px rgb(8, 8, 8);
     opacity: 0;
     text-align: center;
-    padding-left: 5%;
     width: 100%;
-  }
-
-  #slogan1 {
+    height: 100%;
+    padding-bottom: 2%;
     transition: opacity 4s;
     padding-bottom: 3%;
+  }
+
+  @media (max-width: 900px) {
+    #slogan1, #slogan2 {
+      font-size: 22pt;
+    }
 }
-
-  #slogan2 {
-    transition: opacity 4s;
-    padding-bottom: 3%;
-  }
   
   /* /////////////////////////////// 2nd CONTAINER ///////////////////////////////
   
@@ -123,8 +128,15 @@
     justify-content: space-evenly;
     align-items: center;
     min-height: 50vh;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @media (max-width: 900px) {
+    #secondContainer {
+    padding-top: 40px;
+    padding-bottom: 70px;
+    }
   }
   
   /* ----------------------------- (popup card) ------------------------------- */
@@ -144,7 +156,7 @@
     background: rgba(255, 255, 255, 0.9);
     transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
     font-family: 'Teko';
-    font-size: 22pt;
+    font-size: 28pt;
     font-weight: 200;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -170,6 +182,11 @@
   #popup-btn1, #popup-btn2, #popup-btn3 {
     transition: background-color 0.5s ease-in-out, 
     color 0.5s ease-in-out;
+    font-size: 22pt;
+    font-family: 'Hind';
+    font-weight: 900;
+    height: 4vh;
+    line-height: 4vh;
   }
   
   #popup-btn1:hover, #popup-btn2:hover, #popup-btn3:hover {
@@ -203,11 +220,11 @@
   .card-dimensions .default-card {
     z-index: 2;
     position: relative;
-    min-width: 300px;
-    max-width: 20vw;
-    height: 30vh;
-    margin: 10px;
-    border-radius: 10px;
+    min-width: 350px;
+    height: 40vh;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 20px;
   }
   
   .card-dimensions .default-card:before {
@@ -216,8 +233,8 @@
     font-family: 'IBM Plex Sans', sans-serif;
     width: 100%;
     height: 20%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -232,17 +249,20 @@
     bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 14pt;
+    font-size: 13pt;
     text-decoration: none;
     padding-left: 7px;
-    padding-top: 3px;
+    padding-top: 1.5%;
     border-radius: 10px;
     cursor: pointer;
-    font-family: 'Teko';
-    letter-spacing: 6px;
+    font-family: 'Hind';
+    font-weight: 900;
+    letter-spacing: 5px;
     text-align: center;
     width: 30%;
-    margin-bottom: 11px;
+    height: 3vh;
+    line-height: 3vh;
+    margin-bottom: 5%;
   }
   
   /* ----------------------------- (popup view) ------------------------------- */
@@ -272,7 +292,8 @@
   .card-dimensions .popup-card {
     position: relative;
     display: flex;
-    width: 800px;
+    width: 95vw;
+    max-width: 1200px;
     height: 500px;
     margin: 20px;
   }
@@ -314,7 +335,9 @@
     width: 55%;
     height: 100%;
     box-sizing: border-box;
-    padding: 40px;
+    padding: 30px;
+    padding-bottom: 20px;
+    padding-top: 60px;
     border-radius: 10px;
   }
   
@@ -330,22 +353,46 @@
   
   .card-dimensions .popup-card .info h2 {
     font-family: 'Teko';
-    font-size: 22pt;
+    font-size: 24pt;
     line-height: 20px;
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
     transform: translateY(-5px);
     letter-spacing: 6px;
+    margin-bottom: 5%;
   }
   
   .card-dimensions .popup-card .info p {
-    font-size: 12pt;
-    margin: 10px;
+    font-size: 14pt;
     text-align: center;
     font-family: 'IBM Plex Sans', sans-serif;
   }
-  
+
+  .contents-description {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .card-dimensions .popup-card .info ul {
+    height: fit-content;
+    margin-left: 15%;
+  }
+
+  .card-dimensions .popup-card .info li {
+    font-size: 12pt;
+    margin: 10px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    list-style-type: square;
+    width: 180px;
+  }
+
+  .card-dimensions .popup-card .info .info-p2 {
+    margin-top: 10%;
+    margin-bottom: 1%;
+    transform: translateY(-25%);
+  }
+
   .card-dimensions .popup-card .info .read-more-btn {
     color: #fff;
     background-color: rgb(71,111,255);
@@ -354,19 +401,40 @@
     text-align: center;
     text-decoration: none;
     margin: auto;
+    transform: translateY(-20%);
     padding: 10px 50px;
     border-radius: 20px;
     letter-spacing: 3px;
     font-family: 'Hind', sans-serif;
+    height: 2.5vh;
+    line-height: 2.5vh;
+  }
+
+  .popup-view-subscript {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14pt;
+    margin-top: 10%;
   }
   
   /* --------------------------- (card reponsiveness) -------------------------- */
   
   @media (max-width: 900px) {
+
+    .card-dimensions .default-card {
+      max-width: 400px;
+    }
+
+    #card1:before, #card2:before, #card3:before {
+      font-size: 28pt;
+    }
+
     .card-dimensions .popup-card {
       flex-direction: column;
-      width: 550px;
-      height: auto;
+      width: 350px;
+      height: 95vh;
     }
   
     .card-dimensions .popup-card .card-bg {
@@ -382,25 +450,37 @@
     .card-dimensions .popup-card .info {
       width: 100%;
       height: auto;
-      padding: 20px;
+      padding: 10px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
   
     .card-dimensions .popup-card .info h2 {
       margin: 10px 5px 5px 5px;
-      font-size: 22pt;
+      font-size: 24pt;
+      line-height: 100%;
     }
   
     .card-dimensions .popup-card .info p {
-      margin: 5px;
-      font-size: 13px;
+      font-size: 14pt;
+    }
+
+    .card-dimensions .popup-card .info li {
+      font-size: 12pt;
+      width: 110px;
+    }
+
+    .card-dimensions .popup-card .info .info-p2 {
+      font-size: 12pt;
     }
   
     .card-dimensions .popup-card .info .read-more-btn {
       margin: 5px auto;
       padding: 5px 40px;
-      font-size: 14px;
+      font-size: 14pt;
+      height: 3.5vh;
+      line-height: 3.5vh;
+      width: 110px;
     }
   
     .card-dimensions .popup-card .fa-xmark {
@@ -408,6 +488,12 @@
       border-radius: 2px;
       box-shadow: inset 0 0 10px 10px rgba(255,255,255,0.4), 0 0 5px 5px rgba(255,255,255,0.4);
       padding: 1%;
+    }
+  }
+
+  @media (max-width: 500) {
+    .card-dimensions .default-card {
+      max-width: 350px;
     }
   }
 
@@ -428,7 +514,6 @@ This container holds my introduction */
     z-index: 1;
     padding-bottom: 6vh;
     padding-top: 6vh;
-    background-color: rgba(0,0,0,0.5);
   }
   
   #introductionContent {
@@ -471,7 +556,6 @@ This container holds my introduction */
     font-size: 350%;
     margin: 0;
     color: rgba(255,255,255,0.9);
-    margin-bottom: 2vh;
     z-index: 1;
     font-family: 'Teko';
     font-weight: 300;
@@ -539,7 +623,6 @@ This container holds my introduction */
     border-radius: 8px;
     height: 380px;
     width: 420px;
-    box-shadow: inset 0 0 15px rgba(0,0,0,0.6), 0 0 25px rgba(0,0,0,0.8);
     margin-bottom: 3%;
   }
   
@@ -569,12 +652,26 @@ This container holds my introduction */
 
 /*------------------- Horizontal Scroll Responsiveness --------------------*/
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
   .hs-params > li, .hs-card {
     height: 300px;
     width: 340px;
   }
 
+  #fourthContainer {
+    height: 50vh;
+  }
+
 }
 
+@media (max-width: 500px) {
+  #fourthContainer {
+    height: 70vh;
+  }
+
+  .hs-params > li, .hs-card {
+    height: 280px;
+    width: 300px;
+  }
+}

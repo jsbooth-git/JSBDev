@@ -15,5 +15,5 @@ body {
     position: fixed;
     top: 0;
     background: center center;
-    background-size: contain;
+    background-size: cover;
 }
