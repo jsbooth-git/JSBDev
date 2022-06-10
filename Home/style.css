@@ -20,19 +20,20 @@
   }
 
   html {
-    width: 99vw;
+    width: 100%;
     overflow-x: hidden;
   }
   
   body {
-    width: 100vw;
+    width: 99vw;
+    height: 100%;
     display: grid;
     place-items: center;
     background-color: rgb(0,0,0);
   }
 
   #firstContainer, #secondContainer, #thirdContainer, #fourthContainer {
-    width: 98vw;
+    width: 99vw;
   }
   
   .page-background {
@@ -59,7 +60,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0.1%;
     min-height: 40vh;
     margin-top: 5%;
   }
@@ -85,7 +85,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 28vh;
+    min-height: 30vh;
   }
   
   #logoAndSlogan > img {
@@ -95,9 +95,9 @@
   
   #slogan1, #slogan2 {
     color: white;
-    font-family: 'Hind';
+    font-family: 'Teko';
     letter-spacing: 2vw;
-    font-size: 26pt;
+    font-size: 34pt;
     font-weight: 900;
     line-height: 80%;
     text-shadow: 4px 4px 1px rgb(8, 8, 8);
@@ -107,20 +107,45 @@
     height: 100%;
     padding-bottom: 2%;
     transition: opacity 4s;
-    padding-bottom: 3%;
+  }
+  
+  @media (max-width: 950px) {
+
+    #firstContainer {
+      margin-top: 3%;
+    }
+
+    #logoAndSlogan {
+      transform: scale(130%);
+      max-width: 70%;
+    }
+    
+    #logoAndSlogan > #slogan1, #slogan2 {
+      font-size: 18pt;
+      letter-spacing: 3vw;
+      line-height: 110%;
+      transform: translateX(2%);
+    }
+  }
+  
+  @media (max-width: 420px) {
+
+    #firstContainer {
+      padding-top: 6%;
+      margin-bottom: 4%;
+    }
+
+    #logoAndSlogan {
+      transform: scale(100%);
+    }
+  }
+  
+  @media (min-width: 1000px) {
+    #logoAndSlogan {
+      transform: scale(100%);
+    }
   }
 
-  @media (max-width: 900px) {
-    #logoAndSlogan > #slogan1, #slogan2 {
-      font-size: 22pt;
-    }
-
-    @media (min-width: 1000px) {
-      #logoAndSlogan > #slogan1, #slogan2 {
-        font-size: 14pt;
-      }
-    }
-}
   
   /* /////////////////////////////// 2nd CONTAINER ///////////////////////////////
   
@@ -138,10 +163,10 @@
     padding-bottom: 40px;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 950px) {
     #secondContainer {
-    padding-top: 40px;
-    padding-bottom: 70px;
+    padding-top: 10px;
+    padding-bottom: 40px;
     }
   }
   
@@ -375,14 +400,20 @@
     font-family: 'IBM Plex Sans', sans-serif;
   }
 
-  .contents-description {
+  .card-dimensions .popup-card .info b {
+    padding-left: 10%;
+    width: 50%;
+  }
+
+  .card-dimensions .popup-card .info tbody {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
   }
 
   .card-dimensions .popup-card .info ul {
     height: fit-content;
-    margin-left: 15%;
   }
 
   .card-dimensions .popup-card .info li {
@@ -394,7 +425,7 @@
   }
 
   .card-dimensions .popup-card .info .info-p2 {
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 1%;
     transform: translateY(-25%);
   }
@@ -427,16 +458,40 @@
   
   /* --------------------------- (card reponsiveness) -------------------------- */
 
-  @media (min-width: 1000px) {
+  @media (max-height: 1000px) or (min-width: 1000px) {
     .card-dimensions .popup-card {
-      max-height: 600px;
+      height: 500px;
+  }
+
+  .card-dimensions .popup-card .info h2, 
+  .card-dimensions .popup-card .info p,
+  .card-dimensions .popup-card .info li,
+  .card-dimensions .popup-card .info .info-p2,
+  .card-dimensions .popup-card .info .read-more-btn {
+    transform: translateY(40%) scale(103%);
+  }
+
+  .card-dimensions .popup-card .info b {
+    transform: translateX(5%);
+  }
+
+  .card-dimensions .popup-card .info p {
+    margin-bottom: 9%;
+  }
+
+  .card-dimensions .popup-card .info .read-more-btn {
+    width: 40%;
+    height: 7%;
+    padding: 0;
+    padding-top: 8%;
   }
 }
   
-  @media (max-width: 900px) {
+  @media (max-width: 950px) {
 
     .card-dimensions .default-card {
       max-width: 400px;
+      max-height: 350px;
     }
 
     #card1:before, #card2:before, #card3:before {
@@ -445,7 +500,9 @@
 
     .card-dimensions .popup-card {
       flex-direction: column;
-      max-width: 600px;
+      max-width: 850px;
+      min-width: 300px;
+      min-height: 70vh;
     }
   
     .card-dimensions .popup-card .card-bg {
@@ -460,29 +517,40 @@
   
     .card-dimensions .popup-card .info {
       width: 100%;
-      height: auto;
+      height: 70%;
       padding: 10px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   
     .card-dimensions .popup-card .info h2 {
       margin: 10px 5px 5px 5px;
-      font-size: 24pt;
+      font-size: 32pt;
       line-height: 100%;
     }
   
     .card-dimensions .popup-card .info p {
-      font-size: 14pt;
+      font-size: 20pt;
+    }    
+
+    .card-dimensions .popup-card .info tbody :nth-child(1) {
+      padding-right: 20%;
+    }
+    .card-dimensions .popup-card .info tbody :nth-child(2) {
+      padding-left: 10%;
     }
 
     .card-dimensions .popup-card .info li {
-      font-size: 12pt;
+      font-size: 20pt;
       width: 110px;
     }
 
     .card-dimensions .popup-card .info .info-p2 {
-      font-size: 12pt;
+      font-size: 20pt;
     }
   
     .card-dimensions .popup-card .info .read-more-btn {
@@ -491,6 +559,7 @@
       height: 3.5vh;
       line-height: 3.5vh;
       width: 110px;
+      margin-top: 3%;
     }
   
     .card-dimensions .popup-card .fa-xmark {
@@ -501,11 +570,87 @@
     }
   }
 
-  @media (max-width: 500) {
+  @media (max-width: 420px) {
     .card-dimensions .default-card {
       max-width: 350px;
     }
+
+    .card-dimensions .popup-card {
+      height: 95vh;
+    }
+
+    .card-dimensions .popup-card .info h2, 
+    .card-dimensions .popup-card .info p,
+    .card-dimensions .popup-card .info .info-p2 {
+      width: 120%;
+    }
+
+    .card-dimensions .popup-card .info h2, 
+    .card-dimensions .popup-card .info b,
+    .card-dimensions .popup-card .info p,
+    .card-dimensions .popup-card .info .info-p2 {
+      transform: scale(80%);
+    }
+
+    .card-dimensions .popup-card .info h2 {
+      font-size: 28pt;
+      margin-top: 5%;
+    } 
+
+    .card-dimensions .popup-card .info p {
+      margin-bottom: 10%;
+    }
+
+    .card-dimensions .popup-card .info p,
+    .card-dimensions .popup-card .info .info-p2 {
+      font-size: 15pt;
+      margin-top: 0;
+    }
+
+    .card-dimensions .popup-card .info b {
+      transform: scale(65%) translateY(-80%) translateX(-30%);
+      height: 15%;
+    }
+
+    .card-dimensions .popup-card .info li {
+      font-size: 18pt;
+    }
+
+    .card-dimensions .popup-card .info .read-more-btn {
+      margin-top: 2%;
+    }
+
   }
+
+  @media (max-height: 900px) {
+    .card-dimensions .popup-card .info .read-more-btn {
+      transform: scale(90%) translateY(-30%);
+  }
+
+    .card-dimensions .popup-card .info h2 {
+    font-size: 32pt;
+  }
+
+    .card-dimensions .popup-card .info b,
+    .card-dimensions .popup-card .info p,
+    .card-dimensions .popup-card .info .info-p2 {
+      font-size: 18pt;
+  }
+}
+
+@media (max-width: 420px) and (max-height: 700px) {
+  .card-dimensions .popup-card {
+    height: 95vh;
+  }
+
+  .card-dimensions .popup-card .info {
+    height: 75%;
+  }
+
+  .card-dimensions .popup-card .info > * {
+    transform: scale(20%);
+  }
+}
 
 /* /////////////////////////////// 3rd CONTAINER ///////////////////////////////
 
@@ -675,7 +820,7 @@ This container holds my introduction */
 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 420px) {
   #fourthContainer {
     height: 70vh;
   }
