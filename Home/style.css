@@ -98,7 +98,7 @@
     color: white;
     font-family: 'Teko';
     letter-spacing: 2vw;
-    font-size: 29pt;
+    font-size: 25pt;
     font-weight: 900;
     line-height: 80%;
     text-shadow: 4px 4px 1px rgb(8, 8, 8);
@@ -126,7 +126,7 @@
     }
     
     #logoAndSlogan > #slogan1, #slogan2 {
-      font-size: 16pt;
+      font-size: 20pt;
       letter-spacing: 3vw;
       transform: translateX(2%);
     }
@@ -372,9 +372,10 @@
     height: auto;
     max-height: 80vh;
     box-sizing: border-box;
-    padding: 6.5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
     padding-bottom: 20px;
-    padding-top: 60px;
+    padding-top: 7%;
     border-radius: 10px;
   }
   
@@ -407,32 +408,35 @@
   }
 
   .card-dimensions .popup-card .info b {
-    padding-left: 10%;
-    width: 50%;
+    width: 100%;
   }
 
   .card-dimensions .popup-card .info tbody {
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    width: 100%;
+    justify-content: space-evenly;
+    width: 150%;
   }
+
+  .card-dimensions .popup-card .info tbody tr  {
+    margin-left: 5%;
+  }
+
 
   .card-dimensions .popup-card .info ul {
     height: fit-content;
   }
 
   .card-dimensions .popup-card .info li {
-    font-size: 12pt;
-    margin: 10px;
+    font-size: 14pt;
+    margin: 3%;
     font-family: 'IBM Plex Sans', sans-serif;
     list-style-type: square;
-    width: 180px;
+    width: 100%;
+    margin-left: 4%;
   }
 
   .card-dimensions .popup-card .info .info-p2 {
-    margin-bottom: 1%;
-    transform: translateY(-25%);
+    transform: translateY(-12%);
   }
 
   .card-dimensions .popup-card .info .read-more-btn {
@@ -624,7 +628,7 @@
 
   }
 
-  @media (max-height: 960px) {
+  @media (max-height: 1080px) {
     .card-dimensions .popup-card .info .read-more-btn {
       transform: scale(90%) translateY(-30%);
   }
