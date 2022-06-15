@@ -374,7 +374,6 @@
     box-sizing: border-box;
     padding-left: 2.5%;
     padding-right: 2.5%;
-    padding-bottom: 20px;
     padding-top: 7%;
     border-radius: 10px;
   }
@@ -446,14 +445,16 @@
     font-weight: 600;
     text-align: center;
     text-decoration: none;
-    margin: auto;
+    margin-bottom: auto;
+    margin-left: 20%;
+    margin-right: 20%;
     transform: translateY(-20%);
     padding: 10px 50px;
     border-radius: 20px;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     font-family: 'Hind', sans-serif;
-    height: 2.5vh;
-    line-height: 2.5vh;
+    height: 4vh;
+    line-height: 4vh;
   }
 
   .popup-view-subscript {
@@ -501,33 +502,37 @@
     max-width: 400px;
     max-height: 350px;
   }
+
   #card1:before, #card2:before, #card3:before {
     font-size: 28pt;
   }
   .card-dimensions .popup-card {
+    padding: 5%;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     min-height: 600px;
-    max-width: 850px;
+    height: auto;
+    max-height: 70vh;
     min-width: 300px;
-    min-height: 70vh;
+    width: auto;
+    max-width: 80vw;
   }
 
   .card-dimensions .popup-card .card-bg {
     z-index: 3;
-    width: 100%;
+    width: 85%;
     min-height: 200px;
     height: auto;
     max-height: 40vh;
-    transform: translateY(0);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 0;
   }
 
   .card-dimensions .popup-card .info {
-    width: 100%;
-    height: 70%;
-    padding: 10px;
+    width: 85%;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     display: flex;
@@ -570,7 +575,7 @@
 
   .card-dimensions .popup-card .fa-xmark {
     z-index: 4;
-    border-radius: 2px;
+    border-radius: 25px;
     box-shadow: inset 0 0 10px 10px rgba(255,255,255,0.4), 0 0 5px 5px rgba(255,255,255,0.4);
     padding: 1%;
   }
@@ -640,7 +645,7 @@
     .card-dimensions .popup-card .info b,
     .card-dimensions .popup-card .info p,
     .card-dimensions .popup-card .info .info-p2 {
-      font-size: 18pt;
+      font-size: 16pt;
   }
 }
 
