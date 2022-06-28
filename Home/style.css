@@ -1,513 +1,531 @@
 /* -------------------------------- Main -------------------------------------- */
 
-  #pageHidden {
-    position: fixed; 
-    height: 100%; 
-    width: 100%; 
-    top:0; 
-    left: 0; 
-    background: #000; 
-    z-index: 9999;
-  }
-  
-  :root {
-    box-sizing: border-box;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-  }
+#pageHidden {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9999;
+}
 
-  html {
-    width: 100%;
-    overflow-x: hidden;
-  }
-  
-  body {
-    width: 99vw;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    background-color: rgb(0,0,0);
-  }
+:root {
+  box-sizing: border-box;
+}
 
-  #firstContainer, #secondContainer, #thirdContainer, #fourthContainer {
-    width: 99vw;
-  }
-  
-  .page-background {
-    background-position: center;
-    background-size: cover;
-    background-image: url('Media/Focus_PageBackground_DavidMonje.jpg');
-  }
-  
-  /* first-background encompasses 1st and 2nd container*/
-  .page-background-filter {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgba(0,0,0,0.5);
-    height: 100%;
-    width: 99vw;
-  }
-  
-  /* /////////////////////////////// 1st CONTAINER ///////////////////////////////
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 99vw;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: rgb(0, 0, 0);
+}
+
+#firstContainer,
+#secondContainer,
+#thirdContainer,
+#fourthContainer {
+  width: 99vw;
+}
+
+.page-background {
+  background-position: center;
+  background-size: cover;
+  background-image: url('Media/Focus_PageBackground_DavidMonje.jpg');
+}
+
+/* first-background encompasses 1st and 2nd container*/
+.page-background-filter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 99vw;
+}
+
+/* /////////////////////////////// 1st CONTAINER ///////////////////////////////
   
   This is the page header with background, logo and slogan */
-  
+
+#firstContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+  margin-top: 5%;
+}
+
+#pageHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: absolute;
+  background-image: url('Media/Galaxy_Background_GregoryHayes.jpg');
+  box-shadow: 0 0 40px 40px black;
+  z-index: 2;
+  min-height: 33vh;
+}
+
+#logoAndSlogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 30vh;
+}
+
+#logoAndSlogan>img {
+  min-width: 45%;
+  width: auto;
+  max-width: 300px;
+}
+
+#slogan1,
+#slogan2 {
+  color: white;
+  font-family: 'Teko';
+  letter-spacing: 2vw;
+  font-size: 25pt;
+  font-weight: 900;
+  line-height: 80%;
+  text-shadow: 4px 4px 1px rgb(8, 8, 8);
+  opacity: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 2%;
+  transition: opacity 4s;
+}
+
+@media (max-width: 960px) {
+
   #firstContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 40vh;
-    margin-top: 5%;
+    margin-top: 3%;
+    min-height: 340px;
+    height: auto;
+    max-height: 50vh;
   }
-  
+
   #pageHeader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: absolute;
-    background-image: url('Media/Galaxy_Background_GregoryHayes.jpg');
-    box-shadow: 0 0 40px 40px black;
-    z-index: 2;
-    min-height: 33vh;
+    min-height: 340px;
+    height: auto;
+    max-height: 50vh;
   }
-  
+
+  #logoAndSlogan>#slogan1,
+  #slogan2 {
+    font-size: 20pt;
+    letter-spacing: 3vw;
+    transform: translateX(2%);
+  }
+}
+
+@media (max-width: 700px) {
+
+  #firstContainer {
+    padding-top: 6%;
+    margin-bottom: 4%;
+  }
+
   #logoAndSlogan {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 30vh;
+    transform: scale(100%);
   }
-  
-  #logoAndSlogan > img {
-    min-width: 45%;
-    width: auto;
-    max-width: 300px;
-  }
-  
-  #slogan1, #slogan2 {
-    color: white;
-    font-family: 'Teko';
-    letter-spacing: 2vw;
-    font-size: 25pt;
-    font-weight: 900;
-    line-height: 80%;
-    text-shadow: 4px 4px 1px rgb(8, 8, 8);
-    opacity: 0;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 2%;
-    transition: opacity 4s;
-  }
-  
-  @media (max-width: 960px) {
+}
 
-    #firstContainer {
-      margin-top: 3%;
-      min-height: 340px;
-      height: auto;
-      max-height: 50vh;
-    }
-
-    #pageHeader {
-      min-height: 340px;
-      height: auto;
-      max-height: 50vh;
-    }
-    
-    #logoAndSlogan > #slogan1, #slogan2 {
-      font-size: 20pt;
-      letter-spacing: 3vw;
-      transform: translateX(2%);
-    }
+@media (min-width: 1000px) {
+  #logoAndSlogan {
+    transform: scale(100%);
   }
-  
-  @media (max-width: 700px) {
+}
 
-    #firstContainer {
-      padding-top: 6%;
-      margin-bottom: 4%;
-    }
 
-    #logoAndSlogan {
-      transform: scale(100%);
-    }
-  }
-  
-  @media (min-width: 1000px) {
-    #logoAndSlogan {
-      transform: scale(100%);
-    }
-  }
-
-  
-  /* /////////////////////////////// 2nd CONTAINER ///////////////////////////////
+/* /////////////////////////////// 2nd CONTAINER ///////////////////////////////
   
   This is the container holding the popup view cards for the brief on each section
   that can be visited on the website */
-  
-  #secondContainer {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    min-height: 50vh;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
 
-  @media (max-width: 960px) {
-    #secondContainer {
+#secondContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 50vh;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 960px) {
+  #secondContainer {
     padding-top: 10px;
     padding-bottom: 40px;
-    }
   }
-  
-  /* ----------------------------- (popup card) ------------------------------- */
-  
-  #card1, #card2, #card3 {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    transform: translateY(10px);
-    box-shadow: 0 -5px 30px 5px rgba(71,111,255,0.7);
-    transition: box-shadow 0.5s ease-in-out;
-    transform: translateY(-0.5%);
-  }
-  
-  #card1:before, #card2:before, #card3:before { 
-    background: rgba(255, 255, 255, 0.9);
-    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
-    font-family: 'Teko';
-    font-size: 28pt;
-    font-weight: 200;
-    padding-top: 2%;
-    padding-bottom: 2%;
-  }
-  
-  #card1:before {
-    content: 'WEB DEVELOPMENT';
-  }
-  
-  #card2:before {
-    content: 'MY FOCUS'
-  }
-  
-  #card3:before {
-    content: 'SOUND ENGINEERING'
-  }
-  
-  #card1:hover, #card2:hover, #card3:hover {
-    box-shadow: 0 -5px 30px 5px rgba(255, 255, 255, 0.7);
-    transition: box-shadow 0.5s ease-in-out;
-  }
-  
- .popup-btn {
-    transition: background-color 0.5s ease-in-out, 
+}
+
+/* ----------------------------- (popup card) ------------------------------- */
+
+#card1,
+#card2,
+#card3 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  transform: translateY(10px);
+  box-shadow: 0 -5px 30px 5px rgba(71, 111, 255, 0.7);
+  transition: box-shadow 0.5s ease-in-out;
+  transform: translateY(-0.5%);
+}
+
+#card1:before,
+#card2:before,
+#card3:before {
+  background: rgba(255, 255, 255, 0.9);
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  font-family: 'Teko';
+  font-size: 28pt;
+  font-weight: 200;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+#card1:before {
+  content: 'WEB DEVELOPMENT';
+}
+
+#card2:before {
+  content: 'MY FOCUS'
+}
+
+#card3:before {
+  content: 'SOUND ENGINEERING'
+}
+
+#card1:hover,
+#card2:hover,
+#card3:hover {
+  box-shadow: 0 -5px 30px 5px rgba(255, 255, 255, 0.7);
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.popup-btn {
+  transition: background-color 0.5s ease-in-out,
     color 0.5s ease-in-out;
-    font-size: 16pt;
-    font-family: 'Hind';
-    font-weight: 900;
-    height: 4vh;
-    line-height: 4vh;
-  }
-  
-  #popup-btn1:hover, #popup-btn2:hover, #popup-btn3:hover {
-    transition: background-color 0.5s ease-in-out, 
+  font-size: 16pt;
+  font-family: 'Hind';
+  font-weight: 900;
+  height: 4vh;
+  line-height: 4vh;
+}
+
+#popup-btn1:hover,
+#popup-btn2:hover,
+#popup-btn3:hover {
+  transition: background-color 0.5s ease-in-out,
     color 0.5s ease-in-out;
-  }
-  
-  #card1:hover > #popup-btn1, #card2:hover > #popup-btn2, #card3:hover > #popup-btn3{
-    background-color: rgba(71,111,255,0.7);
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-    color: white;
-  }
-  
-  #card1:hover:before,  #card2:hover:before, #card3:hover:before{
-    background-color: rgba(71,111,255,0.7);
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-    color: white;
-  }
-  
-  #card1 {
-    background-image: url('Media/WebDev_ProductCard_AlesNesetril.jpg');
-  }
-  
-  #card2 {
+}
+
+#card1:hover>#popup-btn1,
+#card2:hover>#popup-btn2,
+#card3:hover>#popup-btn3 {
+  background-color: rgba(71, 111, 255, 0.7);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  color: white;
+}
+
+#card1:hover:before,
+#card2:hover:before,
+#card3:hover:before {
+  background-color: rgba(71, 111, 255, 0.7);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  color: white;
+}
+
+#card1 {
+  background-image: url('Media/WebDev_ProductCard_AlesNesetril.jpg');
+}
+
+#card2 {
   background-image: url('Media/Focus_ProductCard_DavidMonje.jpg');
-  }
-  
-  #card3 {
-  background-image: url('Media/SoundEng_ProductCard_IvanJermakov.jpg');}
-  
-  .card-dimensions .default-card {
-    z-index: 2;
-    position: relative;
-    min-width: 350px;
-    height: 40vh;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    border-radius: 20px;
-  }
-  
-  .card-dimensions .default-card:before {
-    position: absolute;
-    font-weight: 600;
-    font-family: 'IBM Plex Sans', sans-serif;
-    width: 100%;
-    height: 18%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: 2.5px;
-  }
-  
-  .card-dimensions .default-card .popup-btn {
-    z-index: 3;
-    color: black;
-    background: rgba(255, 255, 255, 0.7);
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-decoration: none;
-    padding-left: 7px;
-    padding-top: 1.5%;
-    border-radius: 10px;
-    cursor: pointer;
-    font-family: 'Teko';
-    letter-spacing: 5px;
-    text-align: center;
-    width: 30%;
-    height: 4vh;
-    line-height: 4vh;
-    margin-bottom: 5%;
-  }
-  
-  /* ----------------------------- (popup view) ------------------------------- */
-  
-  .card-dimensions .popup-view {
-    z-index: 4;
-    background: rgba(255, 255, 255, 0.7);
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.35s;
-  }
-  
-  .card-dimensions .popup-view.active {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.35s;
-    width: 100%;
-  }
-  
-  .card-dimensions .popup-card {
-    position: relative;
-    display: flex;
-    margin: 20px;
-    width: 94vw;
-    max-width: 900px;
-    height: 80vh;
-    max-height: 700px;
-  }
-  
-  .card-dimensions .popup-card .card-bg {
-    z-index: 3;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45%;
-    height: 90%;
-    transform: translateY(25px);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-  }
-  
-  #card1-dimensions .popup-card .card-bg {
-    background-image: url('Media/WebDev_ProductCard_AlesNesetril.jpg');
-  }
-  
-  #card2-dimensions .popup-card .card-bg {
-    background-image: url('Media/Focus_ProductCard_DavidMonje.jpg');
-  }
-  
-  #card3-dimensions .popup-card .card-bg {
-    background-image: url('Media/SoundEng_ProductCard_IvanJermakov.jpg');
-  }
-  
-  .card-dimensions .popup-card .info {
-    z-index: 4;
-    background: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    width: 55%;
-    min-height: 500px;
-    height: auto;
-    max-height: 80vh;
-    box-sizing: border-box;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
-    padding-top: 7%;
-    border-radius: 10px;
-  }
-  
-  .card-dimensions .popup-card .fa-xmark {
-    color: rgb(10, 10, 10);
-    z-index: 5;
-    position: absolute;
-    right: 0;
-    font-size: 15pt;
-    margin: 20px;
-    cursor: pointer;
-  }
-  
-  .card-dimensions .popup-card .info h2 {
-    font-family: 'Teko';
-    font-size: 24pt;
-    line-height: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-    transform: translateY(-5px);
-    letter-spacing: 6px;
-    margin-bottom: 5%;
-  }
-  
-  .card-dimensions .popup-card .info p {
-    font-size: 14pt;
-    text-align: center;
-    font-family: 'IBM Plex Sans', sans-serif;
-  }
+}
 
-  .card-dimensions .popup-card .info b {
-    width: 100%;
-  }
+#card3 {
+  background-image: url('Media/SoundEng_ProductCard_IvanJermakov.jpg');
+}
 
-  .card-dimensions .popup-card .info tbody {
-    display: flex;
-    justify-content: space-evenly;
-    width: 150%;
-  }
+.card-dimensions .default-card {
+  z-index: 2;
+  position: relative;
+  min-width: 350px;
+  height: 40vh;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 20px;
+}
 
-  .card-dimensions .popup-card .info tbody tr  {
-    margin-left: 5%;
-  }
+.card-dimensions .default-card:before {
+  position: absolute;
+  font-weight: 600;
+  font-family: 'IBM Plex Sans', sans-serif;
+  width: 100%;
+  height: 18%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2.5px;
+}
+
+.card-dimensions .default-card .popup-btn {
+  z-index: 3;
+  color: black;
+  background: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  padding-left: 7px;
+  padding-top: 1.5%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Teko';
+  letter-spacing: 5px;
+  text-align: center;
+  width: 30%;
+  height: 4vh;
+  line-height: 4vh;
+  margin-bottom: 5%;
+}
+
+/* ----------------------------- (popup view) ------------------------------- */
+
+.card-dimensions .popup-view {
+  z-index: 4;
+  background: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.35s;
+}
+
+.card-dimensions .popup-view.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s;
+  width: 100%;
+}
+
+.card-dimensions .popup-card {
+  position: relative;
+  display: flex;
+  margin: 20px;
+  width: 94vw;
+  max-width: 900px;
+  height: 80vh;
+  max-height: 700px;
+}
+
+.card-dimensions .popup-card .card-bg {
+  z-index: 3;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 90%;
+  transform: translateY(25px);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#card1-dimensions .popup-card .card-bg {
+  background-image: url('Media/WebDev_ProductCard_AlesNesetril.jpg');
+}
+
+#card2-dimensions .popup-card .card-bg {
+  background-image: url('Media/Focus_ProductCard_DavidMonje.jpg');
+}
+
+#card3-dimensions .popup-card .card-bg {
+  background-image: url('Media/SoundEng_ProductCard_IvanJermakov.jpg');
+}
+
+.card-dimensions .popup-card .info {
+  z-index: 4;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 55%;
+  min-height: 500px;
+  height: auto;
+  max-height: 80vh;
+  box-sizing: border-box;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: 5%;
+  border-radius: 10px;
+}
+
+.card-dimensions .popup-card .fa-xmark {
+  color: rgb(10, 10, 10);
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  font-size: 15pt;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.card-dimensions .popup-card .info h2 {
+  font-family: 'Teko';
+  font-size: 24pt;
+  line-height: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  transform: translateY(-5px);
+  letter-spacing: 6px;
+}
+
+.card-dimensions .popup-card .info p {
+  font-size: 14pt;
+  text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.card-dimensions .popup-card .info b {
+  width: 100%;
+}
+
+.card-dimensions .popup-card .info tbody {
+  display: flex;
+  justify-content: space-evenly;
+  width: 150%;
+}
+
+.card-dimensions .popup-card .info tbody tr {
+  margin-left: 5%;
+}
 
 
-  .card-dimensions .popup-card .info ul {
-    height: fit-content;
-  }
+.card-dimensions .popup-card .info ul {
+  height: fit-content;
+}
 
-  .card-dimensions .popup-card .info li {
-    font-size: 14pt;
-    margin: 3%;
-    font-family: 'IBM Plex Sans', sans-serif;
-    list-style-type: square;
-    width: 100%;
-    margin-left: 4%;
-  }
+.card-dimensions .popup-card .info li {
+  font-size: 14pt;
+  margin: 3%;
+  font-family: 'IBM Plex Sans', sans-serif;
+  list-style-type: square;
+  width: 100%;
+}
 
-  .card-dimensions .popup-card .info .info-p2 {
-    transform: translateY(-12%);
-  }
+.card-dimensions .popup-card .info .info-p2 {
+  transform: translateY(-12%), scale(90%);
+}
 
-  .card-dimensions .popup-card .info .read-more-btn {
-    color: #fff;
-    background-color: rgb(71,111,255);
-    font-size: 13pt;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    margin-bottom: auto;
-    margin-left: 20%;
-    margin-right: 20%;
-    transform: translateY(-20%);
-    padding: 10px 50px;
-    border-radius: 20px;
-    letter-spacing: 5px;
-    font-family: 'Hind', sans-serif;
-    height: 4vh;
-    line-height: 4vh;
-  }
+.card-dimensions .popup-card .info .read-more-btn {
+  color: #fff;
+  background-color: rgb(71, 111, 255);
+  font-size: 13pt;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+  padding: 10px 50px;
+  border-radius: 20px;
+  letter-spacing: 5px;
+  font-family: 'Hind', sans-serif;
+  height: 4vh;
+  line-height: 4vh;
+}
 
-  .popup-view-subscript {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 14pt;
-    margin-top: 10%;
-  }
-  
-  /* --------------------------- (card reponsiveness) -------------------------- */
+.popup-view-subscript {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14pt;
+  margin-top: 10%;
+}
+
+/* --------------------------- (card reponsiveness) -------------------------- */
 
 @media (max-height: 1080px) or (min-width: 960px) {
-  .card-dimensions .popup-card .info {
-    padding-top: 15%;
-  }
 
-  .card-dimensions .popup-card .info h2, 
+  .card-dimensions .popup-card .info h2,
   .card-dimensions .popup-card .info p,
   .card-dimensions .popup-card .info li,
   .card-dimensions .popup-card .info .info-p2,
   .card-dimensions .popup-card .info .read-more-btn {
-  transform: translateY(40%) scale(103%);
-  min-height: 200px;
-}
-.card-dimensions .popup-card .info .info-p2 {
-  margin: 5%;
-}
-.card-dimensions .popup-card .info b {
-  transform: translateX(5%);
-}
-.card-dimensions .popup-card .info .read-more-btn {
-  width: 40%;
-  height: 7%;
-  padding: 0;
-}
+    transform: translateY(40%) scale(103%);
+    min-height: 200px;
+  }
 
-.card-dimensions .popup-card,
-.card-dimensions .popup-card .info {
-  min-height: 500px;
-  height: auto;
-  max-height: 70vh;
+  .card-dimensions .popup-card .info .info-p2 {
+    margin: 5%;
+  }
+
+  .card-dimensions .popup-card .info b {
+    transform: translateX(5%);
+  }
+
+  .card-dimensions .popup-card .info .read-more-btn {
+    width: 40%;
+    height: 7%;
+    padding: 0;
+  }
+
+  .card-dimensions .popup-card,
+  .card-dimensions .popup-card .info {
+    min-height: 500px;
+    height: auto;
+    max-height: 70vh;
   }
 }
-  
+
 @media (max-width: 960px) {
   .card-dimensions .default-card {
     max-width: 400px;
     max-height: 350px;
   }
 
-  #card1:before, #card2:before, #card3:before {
+  #card1:before,
+  #card2:before,
+  #card3:before {
     font-size: 28pt;
   }
 
@@ -541,13 +559,7 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-  }
-  
-  .card-dimensions .popup-card .info > * {
-    transform: translateY(25%);
   }
 
   .card-dimensions .popup-card .info h2 {
@@ -557,7 +569,7 @@
   }
 
   .card-dimensions .popup-card .info p {
-    font-size: 17pt;
+    font-size: 130%;
   }
 
   .card-dimensions .popup-card .info tbody {
@@ -569,12 +581,8 @@
     padding-right: 20%;
   }
 
-  .card-dimensions .popup-card .info tbody :nth-child(2) {
-    padding-left: 10%;
-  }
-
   .card-dimensions .popup-card .info li {
-    font-size: 12pt;
+    font-size: 100%;
     width: 110px;
   }
 
@@ -583,100 +591,100 @@
     padding: 5px 40px;
     height: 5.5vh;
     line-height: 5.5vh;
-    width: 30%;
+    width: 50%;
     margin-top: 3%;
   }
 
   .card-dimensions .popup-card .fa-xmark {
     z-index: 4;
     border-radius: 25px;
-    box-shadow: inset 0 0 10px 10px rgba(100,100,100,0.5), 0 0 5px 5px rgba(100,100,100,0.5);
+    box-shadow: inset 0 0 10px 10px rgba(100, 100, 100, 0.5), 0 0 5px 5px rgba(100, 100, 100, 0.5);
     padding: 1%;
   }
 
-    
-  .card-dimensions .popup-card .info > * {
+
+  .card-dimensions .popup-card .info p,
+  .card-dimensions .popup-card .info .read-more-btn,
+  .card-dimensions .popup-card .info h2 {
     transform: scale(90%);
   }
 }
 
-  @media (max-width: 600px) {
-    .card-dimensions .default-card {
-      max-width: 350px;
-    }
-
-    .card-dimensions .popup-card {
-      height: 95vh;
-    }
-
-    .card-dimensions .popup-card .info h2, 
-    .card-dimensions .popup-card .info p,
-    .card-dimensions .popup-card .info .info-p2 {
-      width: 120%;
-    }
-
-    .card-dimensions .popup-card .info h2, 
-    .card-dimensions .popup-card .info b,
-    .card-dimensions .popup-card .info p,
-    .card-dimensions .popup-card .info .info-p2 {
-      transform: scale(80%);
-    }
-
-    .card-dimensions .popup-card .info h2 {
-      font-size: 26pt;
-      margin-top: 5%;
-    } 
-
-    .card-dimensions .popup-card .info p {
-      margin-bottom: 10%;
-    }
-
-    .card-dimensions .popup-card .info p,
-    .card-dimensions .popup-card .info .info-p2 {
-      font-size: 13pt;
-      margin-top: 0;
-    }
-
-    .card-dimensions .popup-card .info b {
-      transform: scale(65%) translateY(-80%) translateX(-30%);
-      height: 15%;
-    }
-
-    .card-dimensions .popup-card .info li {
-      font-size: 16pt;
-    }
-
-    .card-dimensions .popup-card .info .read-more-btn {
-      margin-top: 2%;
-    }
-
+@media (max-width: 600px) {
+  .card-dimensions .default-card {
+    max-width: 350px;
   }
 
-  @media (max-height: 1080px) {
-    .card-dimensions .popup-card .info .read-more-btn {
-      transform: scale(90%) translateY(-30%);
+  .card-dimensions .popup-card {
+    height: 90vh;
   }
 
-    .card-dimensions .popup-card .info h2 {
+  .card-dimensions .popup-card .info h2,
+  .card-dimensions .popup-card .info p,
+  .card-dimensions .popup-card .info .info-p2 {
+    width: 100%;
+  }
+
+  .card-dimensions .popup-card .info h2,
+  .card-dimensions .popup-card .info b,
+  .card-dimensions .popup-card .info p,
+  .card-dimensions .popup-card .info .info-p2 {
+    width: 95%;
+    ;
+  }
+
+  .card-dimensions .popup-card .info h2 {
+    font-size: 26pt;
+    margin-top: 5%;
+  }
+
+  .card-dimensions .popup-card .info p,
+  .card-dimensions .popup-card .info .info-p2 {
+    font-size: 13pt;
+    margin-top: 0;
+  }
+
+  .card-dimensions .popup-card .info b {
+    transform: scale(65%) translateX(-30%);
+    height: 15%;
+  }
+
+  .card-dimensions .popup-card .info li {
+    font-size: 16pt;
+  }
+
+  .card-dimensions .popup-card .info .contents-description {
+    padding-left: 30%;
+  }
+
+}
+
+@media (min-height: 1080px) {
+  .card-dimensions .popup-card .info .read-more-btn {
+    transform: scale(90%) translateY(-30%);
+  }
+
+  .card-dimensions .popup-card .info h2 {
     font-size: 32pt;
   }
 
-    .card-dimensions .popup-card .info b,
-    .card-dimensions .popup-card .info p,
-    .card-dimensions .popup-card .info .info-p2
-    .card-dimensions .popup-card .info li {
-      font-size: 115%;
-      line-height: 125%;
+  .card-dimensions .popup-card .info b,
+  .card-dimensions .popup-card .info p,
+  .card-dimensions .popup-card .info .info-p2 .card-dimensions .popup-card .info li {
+    font-size: 115%;
+    line-height: 115%;
   }
 
   .card-dimensions .popup-card {
     height: 95vh;
   }
+
   .card-dimensions .popup-card .info {
     height: 100%;
     max-height: 90vh;
   }
-  .card-dimensions .popup-card .info > * {
+
+  .card-dimensions .popup-card .info>* {
     transform: scale(90%);
   }
 }
@@ -690,7 +698,7 @@
     height: 75%;
   }
 
-  .card-dimensions .popup-card .info > * {
+  .card-dimensions .popup-card .info>* {
     transform: scale(20%);
   }
 
@@ -700,20 +708,15 @@
 
 }
 
-@media (min-width: 600px) {
-  .card-dimensions .popup-card .p::after,
-  .card-dimensions .popup-card .info:nth-child(3) .contents-description::after {
-    content: '\a';
-    white-space: pre;
-  }
+.card-dimensions .popup-card .p::after,
+.card-dimensions .popup-card .info:nth-child(3) .contents-description::after {
+  content: '\a \a';
+  white-space: pre;
 }
 
-@media (min-width: 720px) {
-  .card-dimensions .popup-card p::after,
-  .card-dimensions .popup-card .info:nth-child(3) .contents-description::after {
-    content: '\a \a';
-    white-space: pre;
-  }
+.card-dimensions .popup-card .info:nth-child(3) .contents-description::after {
+  content: '\a';
+  white-space: pre;
 }
 
 /* /////////////////////////////// 3rd CONTAINER ///////////////////////////////
@@ -721,159 +724,162 @@
 This container holds my introduction */
 
 #thirdContainer {
-    height: 47vh * 18vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('Media/Melbourne_Background_Alexis.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 40px 40px black;
-    z-index: 1;
-    padding-bottom: 6vh;
-    padding-top: 6vh;
-  }
-  
-  #introductionContent {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #introductionContent > p {
-    text-align: center;
-    font-size: 20pt;
-    letter-spacing: 0.4vw;
-    color: rgb(255, 225, 255);
-    font-family: 'Hind';
-    font-weight: 900;
-    text-shadow: 2px 2px rgba(0,0,0,0.65);
-    padding-left: 2%;
-    padding-right: 2%;
-  }
-  
-  /* /////////////////////////////// 4th CONTAINER ///////////////////////////////
+  height: 47vh * 18vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('Media/Melbourne_Background_Alexis.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 40px 40px black;
+  z-index: 1;
+  padding-bottom: 6vh;
+  padding-top: 6vh;
+}
+
+#introductionContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#introductionContent>p {
+  text-align: center;
+  font-size: 20pt;
+  letter-spacing: 0.4vw;
+  color: rgb(255, 225, 255);
+  font-family: 'Hind';
+  font-weight: 900;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.65);
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+/* /////////////////////////////// 4th CONTAINER ///////////////////////////////
   
   This container holds links to showcase my portfolio and defines the scrollbar 
   styles */
-  
-  #fourthContainer {
-    height: 70vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 3vh;
-    padding-top: 3vh;
-  }
-  
-  #fourthContainer > h1 {
-    text-align: center;
-    font-size: 350%;
-    margin: 0;
-    color: rgba(255,255,255,0.9);
-    z-index: 1;
-    font-family: 'Teko';
-    font-weight: 300;
-    letter-spacing: 3vw;
-    width: 100%;
-    text-shadow: 0 0 8px rgb(0,0,0);
-  }
 
-  #hs-container {
-    display: grid;
-    grid-gap: var(--gutter) 0;
-    grid-template-columns: var(--gutter) 1fr var(--gutter);
-    align-content: center;
-    --gutter: 1%;
-    width: 90%;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-  }
-  
-  #hs-container > * {
-    grid-column: 2 / -2;
-  }
-  
-  #hs-container > .full {
-    grid-column: 1 / -2;
-  }
+#fourthContainer {
+  height: 70vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 3vh;
+  padding-top: 3vh;
+}
 
-  #card-holder {
-      height: 150%;
-  }
-  
-  .hs-params {
-    display: grid;
-    grid-template-columns: 10px;
-    grid-template-rows: minmax(50px, 1fr);
-    grid-auto-flow: column;
-    grid-auto-columns: calc(29% - var(--gutter) * 6.5); /* Make this last value 1.5 higher than the number of cards */
-    align-content: center;
-    padding-bottom: 1%;
-  }
-  
-  .hs-params:before {
-    content: '';
-    width: 6%;
-  }
+#fourthContainer>h1 {
+  text-align: center;
+  font-size: 350%;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  font-family: 'Teko';
+  font-weight: 300;
+  letter-spacing: 3vw;
+  width: 100%;
+  text-shadow: 0 0 8px rgb(0, 0, 0);
+}
 
-  .hs-params:after {
-    content: '';
-    width: 6%;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    height: 80%;
-  }
-  
-  .hs-params > li, .hs-card {
-    scroll-snap-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    border-radius: 8px;
-    height: 380px;
-    width: 420px;
-    margin-bottom: 3%;
-  }
-  
-  ::-webkit-scrollbar {
-    width: 17px;
-    height: 15px;
-    -webkit-border-radius: 10px;
-    -webkit-box-shadow: 0 0 15px 3px rgb(0,0,0);
-  }
-  
-  ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.8);
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-  }
-  
-  ::-webkit-scrollbar-thumb:window-inactive {
-    background: rgba(255,255,255,0.4)
-  }
+#hs-container {
+  display: grid;
+  grid-gap: var(--gutter) 0;
+  grid-template-columns: var(--gutter) 1fr var(--gutter);
+  align-content: center;
+  --gutter: 1%;
+  width: 90%;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+#hs-container>* {
+  grid-column: 2 / -2;
+}
+
+#hs-container>.full {
+  grid-column: 1 / -2;
+}
+
+#card-holder {
+  height: 150%;
+}
+
+.hs-params {
+  display: grid;
+  grid-template-columns: 10px;
+  grid-template-rows: minmax(50px, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: calc(29% - var(--gutter) * 6.5);
+  /* Make this last value 1.5 higher than the number of cards */
+  align-content: center;
+  padding-bottom: 1%;
+}
+
+.hs-params:before {
+  content: '';
+  width: 6%;
+}
+
+.hs-params:after {
+  content: '';
+  width: 6%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  height: 80%;
+}
+
+.hs-params>li,
+.hs-card {
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  height: 380px;
+  width: 420px;
+  margin-bottom: 3%;
+}
+
+::-webkit-scrollbar {
+  width: 17px;
+  height: 15px;
+  -webkit-border-radius: 10px;
+  -webkit-box-shadow: 0 0 15px 3px rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.4)
+}
 
 /*------------------- Horizontal Scroll Responsiveness --------------------*/
 
 @media (max-width: 960px) {
 
-  .hs-params > li, .hs-card {
+  .hs-params>li,
+  .hs-card {
     height: 300px;
     width: 340px;
   }
@@ -889,7 +895,8 @@ This container holds my introduction */
     height: 70vh;
   }
 
-  .hs-params > li, .hs-card {
+  .hs-params>li,
+  .hs-card {
     height: 280px;
     width: 300px;
   }
