@@ -398,7 +398,7 @@ body {
 }
 
 .card-dimensions .popup-card .fa-xmark {
-  color: rgb(10, 10, 10);
+  color: rgb(0, 0, 0);
   z-index: 5;
   position: absolute;
   right: 0;
@@ -412,7 +412,6 @@ body {
   font-size: 24pt;
   line-height: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
   text-align: center;
   transform: translateY(-5px);
   letter-spacing: 6px;
@@ -430,8 +429,9 @@ body {
 
 .card-dimensions .popup-card .info tbody {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 150%;
+  align-items: center;
 }
 
 .card-dimensions .popup-card .info tbody tr {
@@ -449,6 +449,16 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
   list-style-type: square;
   width: 100%;
+}
+
+#narrow-list {
+  width: 70%;
+  transform: translateX(-10%);
+}
+
+#narrow-list tbody ul li {
+  width: 300%;
+  font-size: 100%;
 }
 
 .card-dimensions .popup-card .info .info-p2 {
@@ -586,6 +596,11 @@ body {
     width: 110px;
   }
 
+  #narrow-list {
+    padding-left: 0;
+    transform: translateX(-2vw);
+  }
+
   .card-dimensions .popup-card .info .read-more-btn {
     margin-bottom: 10%;
     padding: 5px 40px;
@@ -598,10 +613,12 @@ body {
   .card-dimensions .popup-card .fa-xmark {
     z-index: 4;
     border-radius: 25px;
-    box-shadow: inset 0 0 10px 10px rgba(100, 100, 100, 0.5), 0 0 5px 5px rgba(100, 100, 100, 0.5);
+    color: rgb(255, 255, 255);
     padding: 1%;
+    right: 16%;
+    top: 1%;
+    position: fixed;
   }
-
 
   .card-dimensions .popup-card .info p,
   .card-dimensions .popup-card .info .read-more-btn,
